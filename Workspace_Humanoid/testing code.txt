@@ -1,0 +1,294 @@
+////Motor A الكتف اليمين جوة
+//TIM5->CCR1=65.9;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+//// MotorA' الكتف الشمال جوة
+//TIM5->CCR2=81.4;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
+////Motor D
+//TIM5->CCR3=6.85;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
+////MotorD'
+//TIM9->CCR1=73.8;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+
+////Motor C
+//TIM1->CCR1=4.29;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+
+////Motor C'
+//TIM5->CCR2=94.3;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
+//HAL_Delay(5000);
+
+////Motor B
+//TIM1->CCR3= 0;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+
+////Motor B'
+//TIM1->CCR3= 0;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+
+//fingers
+//Right hand
+//PCA9685_SetServoAngle(1,  10);  //pinky
+
+//  PCA9685_SetServoAngle(1,  140);
+//  HAL_Delay(1000);
+//  PCA9685_SetServoAngle(1,  10);  //Pinky
+
+
+// pinkey Right hand (1)
+PCA9685_SetServoAngle(1,  140);
+//Ring Right hand (2)
+PCA9685_SetServoAngle(0,  140);
+//middle Right hand (3)
+PCA9685_SetServoAngle(2,  140);
+//index Right hand (4)
+PCA9685_SetServoAngle(3,  170);
+//thumb Right hand (5)
+PCA9685_SetServoAngle(4,  15);
+
+// pinkey Left hand (1')
+PCA9685_SetServoAngle(5,  0);
+//Ring Left hand (2')
+PCA9685_SetServoAngle(7,  0);
+//middle Left hand (3')
+PCA9685_SetServoAngle(6,  180);
+//index Left hand (4')
+PCA9685_SetServoAngle(8,  0);
+//thumb Left hand (5')
+PCA9685_SetServoAngle(9,  180);
+HAL_Delay(3000);
+
+// pinkey Right hand (1)
+PCA9685_SetServoAngle(1,  10);
+//Ring Right hand (2)
+PCA9685_SetServoAngle(0,  0);
+//middle Right hand (3)
+PCA9685_SetServoAngle(2,  0);
+//index Right hand (4)
+PCA9685_SetServoAngle(3,  75);
+//thumb Right hand (5)
+PCA9685_SetServoAngle(4,  75);
+
+// pinkey Left hand (1')
+PCA9685_SetServoAngle(5,  180);
+//Ring Left hand (2')
+PCA9685_SetServoAngle(7,  180);
+//middle Left hand (3')
+PCA9685_SetServoAngle(6,  0);
+//index Left hand (4')
+PCA9685_SetServoAngle(8,  180);
+//thumb Left hand (5')
+PCA9685_SetServoAngle(9,  90);
+HAL_Delay(3000);
+*/
+//// D rest right
+//PCA9685_SetServoAngle(10,  10);
+//// D'
+//PCA9685_SetServoAngle(11,  150);
+//// C elko3 right
+//PCA9685_SetServoAngle(12,  150);
+//// C'
+//PCA9685_SetServoAngle(13,  150);
+//// B arm right
+////PCA9685_SetServoAngle(14,  90);
+//// B'
+//PCA9685_SetServoAngle(15,  50);
+//HAL_Delay(5000);
+//// D rest right
+//PCA9685_SetServoAngle(10,  80);
+//// D'
+//PCA9685_SetServoAngle(11,  30);
+//// C elko3 right
+//PCA9685_SetServoAngle(12,  55);
+//// C'
+//PCA9685_SetServoAngle(13,  40);
+//// B arm right
+////PCA9685_SetServoAngle(14,  90);
+//// B'
+//PCA9685_SetServoAngle(15,  80);
+//HAL_Delay(5000);
+
+
+////Motor A الكت�? اليمين جوة
+//TIM5->CCR1=45.2;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+////MotorA' الكت�? اللشمال جوة
+//TIM5->CCR2=40;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
+//HAL_Delay(5000);
+////Motor A الكت�? اليمين جوة
+//TIM5->CCR1=86.5;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+////MotorA' ا
+//TIM5->CCR2=130;          //112.3;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
+//HAL_Delay(5000);
+
+//
+//	  TIM5->CCR3=2;
+//	  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
+//	  HAL_Delay(2000);
+//	  TIM5->CCR3=100;
+//      HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
+//	  TIM5->CCR3=120;
+//	  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
+//	  HAL_Delay(2000);
+
+//      //Rotating head Right&Left
+//	  TIM9->CCR2=30;
+//	  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_2);
+//	  HAL_Delay(2000);
+//	  TIM9->CCR2=100;
+//	  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_2);
+//	  HAL_Delay(2000);
+
+
+
+
+
+
+
+//Motor D
+//TIM5->CCR3=32.4;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
+//HAL_Delay(5000);
+//TIM5->CCR3=68.5;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
+//HAL_Delay(5000);
+//
+////MotorD'
+//TIM9->CCR1=4.29;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+//HAL_Delay(5000);
+//TIM5->CCR1=75;
+//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+//HAL_Delay(5000);
+
+////Motor C
+//TIM1->CCR1=4.29;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+//HAL_Delay(5000);
+//TIM1->CCR1=75;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+//HAL_Delay(5000);
+
+////Motor C'
+//TIM1->CCR2=83.9;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+//HAL_Delay(5000);
+//TIM1->CCR2=104.6;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+//HAL_Delay(5000);
+
+
+////Motor B
+//TIM1->CCR3= 50;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+//HAL_Delay(5000);
+//TIM1->CCR3=80;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+//HAL_Delay(5000);
+//
+//
+////Motor B'
+//
+//TIM1->CCR3= 50;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+//HAL_Delay(5000);
+//TIM1->CCR3=80;
+//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+//HAL_Delay(5000);
+
+// DC motor Code
+HAL_GPIO_WritePin(GPIOC, 13, 1); //enable R
+HAL_GPIO_WritePin(GPIOC, 14, 1); //enable L
+HAL_GPIO_WritePin(GPIOC, 15, 0); //is left
+HAL_GPIO_WritePin(GPIOB, 5, 0);  //is Right
+TIM1->CCR1=40;    //PWM right  freq 100 ARR 255
+HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+
+
+//function for angles
+
+
+void SERV0_Angle(uint32_t Timer_number, uint32_t Channel, uint32_t  angle , float start )
+{
+	float Duty_Cycle;
+	Duty_Cycle= start;
+	switch(Timer_number){
+	case 1:{
+		switch(Channel){
+		case 1:
+			{
+				TIM1->CCR1=Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+			}
+		case 2:
+			{
+				TIM1->CCR2= Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+			}
+		case 3:
+			{
+				TIM1->CCR3= Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+			}
+		case 4:
+			{
+				TIM1->CCR4= Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+			}
+		}
+		}
+	case 3:{
+		switch(Channel){
+		case 1:
+			{
+				TIM3->CCR1= Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+			}
+		case 2:
+			{
+				TIM3->CCR2= Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+			}
+		case 3:
+			{
+				TIM3->CCR3= Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+			}
+		}
+	}
+	case 5:{
+		switch(Channel){
+		case 1:
+			{
+				TIM5->CCR1= Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+			}
+		case 2:
+			{
+				TIM5->CCR2= Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
+			}
+		case 3:
+			{
+				TIM5->CCR3= Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
+			}
+		}
+		}
+	case 9:{
+		switch(Channel){
+		case 2:
+			{
+				TIM9->CCR2= Duty_Cycle;
+				HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_2);
+			}
+		}
+		}
+
+	}
+}

@@ -1,16 +1,39 @@
 /*
- * pca9685.h
+ * pca9685.c
  *
  *  Created on: 20.01.2019
  *      Author: Mateusz Salamon
  *		mateusz@msalamon.pl
+ *      Documented & edited on: 24/4/2024
+ *      Documented & edited By: Yara Mohamed\Salma Metwally
  *
- *      Website: https://msalamon.pl/nigdy-wiecej-multipleksowania-na-gpio!-max7219-w-akcji-cz-3/
- *      GitHub:  https://github.com/lamik/Servos_PWM_STM32_HAL
  */
 
 #ifndef PCA9685_H_
 #define PCA9685_H_
+
+// Motor Connections to channels identifications
+
+#define RingR_channel0 0
+#define PinkyR_channel1 1
+#define MiddleR_channel2 2
+#define IndexR_channel3 3
+#define ThumbR_channel4 4
+
+#define PinkyL_channel5 5
+#define MiddleL_channel6 6
+#define RingL_channel7 7
+#define IndexL_channel8 8
+#define ThumbL_channel9 9
+
+#define RestR_channel10 10   //LABEL D
+#define RestL_channel11 11   //LABEL D'
+#define ElbowR_channel12 12  //LABEL C
+#define ElbowL_channel13 13  //LABEL C'
+#define ShoulderOutR_channel14 14  //LABEL B
+#define ShoulderOutL_channel15 15  //LABEL B'
+
+
 
 //
 //	Enable Servo control mode
