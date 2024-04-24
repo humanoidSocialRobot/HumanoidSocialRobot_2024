@@ -90,8 +90,8 @@ Dc_Motor Motor_DC_Right = {
     .ISPort      = GPIOB,
     .IS_Right     = GPIO_PIN_5,
 	.IS_Left      = GPIO_PIN_4,
-    .timer       = &htim1
-	.PWM_Left_Channel = TIM_CHANNEL_2
+    .timer       = &htim1,
+	.PWM_Left_Channel = TIM_CHANNEL_2,
 	.PWM_Right_Channel = TIM_CHANNEL_1
 
 };
@@ -103,8 +103,8 @@ Dc_Motor Motor_DC_Left = {
     .ISPort      = GPIOB,
     .IS_Right     = GPIO_PIN_13,
 	.IS_Left      = GPIO_PIN_12,
-    .timer       = &htim1
-	.PWM_Left_Channel = TIM_CHANNEL_3
+    .timer       = &htim1,
+	.PWM_Left_Channel = TIM_CHANNEL_3,
 	.PWM_Right_Channel = TIM_CHANNEL_4
 };
 
