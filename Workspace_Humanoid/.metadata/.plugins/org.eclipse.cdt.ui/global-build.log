@@ -393,3 +393,1341 @@ Finished building: Humanoid_Blackbill2.bin
 Finished building: Humanoid_Blackbill2.list
  
  
+12:56:05 **** Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  20756	     20	   2164	  22940	   599c	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.list
+ 
+Finished building: Humanoid_Blackbill2.hex
+Finished building: Humanoid_Blackbill2.bin
+ 
+ 
+13:07:09 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  20756	     20	   2164	  22940	   599c	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+13:25:54 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/pca9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pca9685.d" -MT"Core/Src/pca9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pca9685.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c:57:1: error: unknown type name 'unit8_t'; did you mean 'uint8_t'?
+   57 | unit8_t tx_buffer[27]="welcome to Humanoid\n\r";
+      | ^~~~~~~
+      | uint8_t
+../Core/Src/main.c:57:23: error: array of inappropriate type initialized from string constant
+   57 | unit8_t tx_buffer[27]="welcome to Humanoid\n\r";
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:135:32: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  135 |     HAL_UART_Transmit(&huart6, tx_buffer, 27, 10)
+      |                                ^~~~~~~~~
+      |                                |
+      |                                int *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:135:50: error: expected ';' before '}' token
+  135 |     HAL_UART_Transmit(&huart6, tx_buffer, 27, 10)
+      |                                                  ^
+      |                                                  ;
+......
+  149 |   }
+      |   ~                                               
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+13:26:28 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:135:50: error: expected ';' before '}' token
+  135 |     HAL_UART_Transmit(&huart6, tx_buffer, 27, 10)
+      |                                                  ^
+      |                                                  ;
+......
+  149 |   }
+      |   ~                                               
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+13:26:48 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25468	     48	   2232	  27748	   6c64	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+Finished building: Humanoid_Blackbill2.list
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+ 
+13:28:52 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25468	     48	   2232	  27748	   6c64	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+Finished building: Humanoid_Blackbill2.bin
+ 
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+13:50:58 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25508	     48	   2240	  27796	   6c94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+13:53:55 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25508	     48	   2240	  27796	   6c94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+13:55:13 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:88:9: error: expected identifier or '(' before 'if'
+   88 |         if(htim->Instance == TIM3 ){
+      |         ^~
+../Core/Src/main.c:91:9: error: expected identifier or '(' before 'else'
+   91 |         else if(2htim->Instance == TIM4){
+      |         ^~~~
+../Core/Src/main.c:91:17: error: invalid suffix "htim" on integer constant
+   91 |         else if(2htim->Instance == TIM4){
+      |                 ^~~~~
+../Core/Src/main.c:94:9: error: expected identifier or '(' before 'else'
+   94 |         else
+      |         ^~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+13:58:31 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Core/Src/main.c:90:9: error: 'x' undeclared (first use in this function)
+   90 |         x = __HAL_TIM_GET_COUNTER(htim3);
+      |         ^
+../Core/Src/main.c:90:9: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: invalid type argument of '->' (have 'TIM_HandleTypeDef')
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/main.c:90:13: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   90 |         x = __HAL_TIM_GET_COUNTER(htim3);
+      |             ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:92:17: error: invalid suffix "htim" on integer constant
+   92 |         else if(2htim->Instance == TIM4){
+      |                 ^~~~~
+../Core/Src/main.c:93:9: error: 'y' undeclared (first use in this function)
+   93 |         y = __HAL_TIM_GET_COUNTER(htim4);
+      |         ^
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: invalid type argument of '->' (have 'TIM_HandleTypeDef')
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/main.c:93:13: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   93 |         y = __HAL_TIM_GET_COUNTER(htim4);
+      |             ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+13:58:52 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Core/Src/main.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: invalid type argument of '->' (have 'TIM_HandleTypeDef')
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/main.c:90:28: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   90 |                 Counter1 = __HAL_TIM_GET_COUNTER(htim3);
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:92:17: error: invalid suffix "htim" on integer constant
+   92 |         else if(2htim->Instance == TIM4){
+      |                 ^~~~~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: invalid type argument of '->' (have 'TIM_HandleTypeDef')
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/main.c:93:28: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   93 |                 Counter2 = __HAL_TIM_GET_COUNTER(htim4);
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+13:59:02 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Core/Src/main.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: invalid type argument of '->' (have 'TIM_HandleTypeDef')
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/main.c:90:28: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   90 |                 Counter1 = __HAL_TIM_GET_COUNTER(htim3);
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: invalid type argument of '->' (have 'TIM_HandleTypeDef')
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/main.c:93:28: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   93 |                 Counter2 = __HAL_TIM_GET_COUNTER(htim4);
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+14:00:20 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Core/Src/main.c:89:32: warning: comparison between pointer and integer
+   89 |         if(htim->Instance->CNT == TIM3 ){
+      |                                ^~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: invalid type argument of '->' (have 'TIM_HandleTypeDef')
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/main.c:90:28: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   90 |                 Counter1 = __HAL_TIM_GET_COUNTER(htim3);
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:92:37: warning: comparison between pointer and integer
+   92 |         else if(htim->Instance->CNT == TIM4){
+      |                                     ^~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: invalid type argument of '->' (have 'TIM_HandleTypeDef')
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/main.c:93:28: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   93 |                 Counter2 = __HAL_TIM_GET_COUNTER(htim4);
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+14:01:07 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25508	     48	   2240	  27796	   6c94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+14:16:41 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25508	     48	   2240	  27796	   6c94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.list
+Finished building: Humanoid_Blackbill2.bin
+ 
+ 
+14:26:02 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25508	     48	   2240	  27796	   6c94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+14:28:15 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/pca9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pca9685.d" -MT"Core/Src/pca9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pca9685.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25508	     48	   2240	  27796	   6c94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+14:30:29 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:718:41: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  718 |                                         OpenHand();
+      |                                         ^~~~~~~~
+../Core/Src/main.c:721:41: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  721 |                                         CloseHand();
+      |                                         ^~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:733:7: warning: conflicting types for 'OpenHand'; have 'void(void)'
+  733 |  void OpenHand(void)
+      |       ^~~~~~~~
+../Core/Src/main.c:718:41: note: previous implicit declaration of 'OpenHand' with type 'void(void)'
+  718 |                                         OpenHand();
+      |                                         ^~~~~~~~
+../Core/Src/main.c:761:7: warning: conflicting types for 'CloseHand'; have 'void(void)'
+  761 |  void CloseHand(void)
+      |       ^~~~~~~~~
+../Core/Src/main.c:721:41: note: previous implicit declaration of 'CloseHand' with type 'void(void)'
+  721 |                                         CloseHand();
+      |                                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+Finished building: Humanoid_Blackbill2.bin
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+14:30:50 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+Finished building: default.size.stdout
+ 
+14:35:12 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:718:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  718 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:721:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  721 |                         CloseHand();
+      |                         ^~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:733:7: warning: conflicting types for 'OpenHand'; have 'void(void)'
+  733 |  void OpenHand(void)
+      |       ^~~~~~~~
+../Core/Src/main.c:718:25: note: previous implicit declaration of 'OpenHand' with type 'void(void)'
+  718 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c: In function 'OpenHand':
+../Core/Src/main.c:36:26: error: expected ')' before ';' token
+   36 | #define PinkyR_channel1 1;
+      |                          ^
+../Core/Src/main.c:736:32: note: in expansion of macro 'PinkyR_channel1'
+  736 |          PCA9685_SetServoAngle(PinkyR_channel1,  140);
+      |                                ^~~~~~~~~~~~~~~
+../Core/Src/main.c:736:31: note: to match this '('
+  736 |          PCA9685_SetServoAngle(PinkyR_channel1,  140);
+      |                               ^
+../Core/Src/main.c:736:10: error: too few arguments to function 'PCA9685_SetServoAngle'
+  736 |          PCA9685_SetServoAngle(PinkyR_channel1,  140);
+      |          ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/pca9685.h:86:16: note: declared here
+   86 | PCA9685_STATUS PCA9685_SetServoAngle(uint8_t Channel, float Angle);
+      |                ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:759:7: warning: conflicting types for 'CloseHand'; have 'void(void)'
+  759 |  void CloseHand(void)
+      |       ^~~~~~~~~
+../Core/Src/main.c:721:25: note: previous implicit declaration of 'CloseHand' with type 'void(void)'
+  721 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+14:35:37 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:718:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  718 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:721:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  721 |                         CloseHand();
+      |                         ^~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:733:7: warning: conflicting types for 'OpenHand'; have 'void(void)'
+  733 |  void OpenHand(void)
+      |       ^~~~~~~~
+../Core/Src/main.c:718:25: note: previous implicit declaration of 'OpenHand' with type 'void(void)'
+  718 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:759:7: warning: conflicting types for 'CloseHand'; have 'void(void)'
+  759 |  void CloseHand(void)
+      |       ^~~~~~~~~
+../Core/Src/main.c:721:25: note: previous implicit declaration of 'CloseHand' with type 'void(void)'
+  721 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+14:36:23 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:718:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  718 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:721:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  721 |                         CloseHand();
+      |                         ^~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:733:7: warning: conflicting types for 'OpenHand'; have 'void(void)'
+  733 |  void OpenHand(void)
+      |       ^~~~~~~~
+../Core/Src/main.c:718:25: note: previous implicit declaration of 'OpenHand' with type 'void(void)'
+  718 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c: In function 'OpenHand':
+../Core/Src/main.c:36:26: error: expected ')' before ';' token
+   36 | #define PinkyR_channel1 1;
+      |                          ^
+../Core/Src/main.c:736:33: note: in expansion of macro 'PinkyR_channel1'
+  736 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:736:31: note: to match this '('
+  736 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |                               ^
+../Core/Src/main.c:736:10: error: too few arguments to function 'PCA9685_SetServoAngle'
+  736 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |          ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/pca9685.h:86:16: note: declared here
+   86 | PCA9685_STATUS PCA9685_SetServoAngle(uint8_t Channel, float Angle);
+      |                ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:759:7: warning: conflicting types for 'CloseHand'; have 'void(void)'
+  759 |  void CloseHand(void)
+      |       ^~~~~~~~~
+../Core/Src/main.c:721:25: note: previous implicit declaration of 'CloseHand' with type 'void(void)'
+  721 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+14:39:14 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/pca9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pca9685.d" -MT"Core/Src/pca9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pca9685.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:696:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  696 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:699:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  699 |                         CloseHand();
+      |                         ^~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:711:7: warning: conflicting types for 'OpenHand'; have 'void(void)'
+  711 |  void OpenHand(void)
+      |       ^~~~~~~~
+../Core/Src/main.c:696:25: note: previous implicit declaration of 'OpenHand' with type 'void(void)'
+  696 |                         OpenHand();
+      |                         ^~~~~~~~
+In file included from ../Core/Src/main.c:25:
+../Core/Src/main.c: In function 'OpenHand':
+../Core/Inc/pca9685.h:18:26: error: expected ')' before ';' token
+   18 | #define PinkyR_channel1 1;
+      |                          ^
+../Core/Src/main.c:714:33: note: in expansion of macro 'PinkyR_channel1'
+  714 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:714:31: note: to match this '('
+  714 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |                               ^
+../Core/Src/main.c:714:10: error: too few arguments to function 'PCA9685_SetServoAngle'
+  714 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |          ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/pca9685.h:109:16: note: declared here
+  109 | PCA9685_STATUS PCA9685_SetServoAngle(uint8_t Channel, float Angle);
+      |                ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:737:7: warning: conflicting types for 'CloseHand'; have 'void(void)'
+  737 |  void CloseHand(void)
+      |       ^~~~~~~~~
+../Core/Src/main.c:699:25: note: previous implicit declaration of 'CloseHand' with type 'void(void)'
+  699 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/pca9685.c:13:
+../Core/Src/pca9685.c: In function 'OpenHand':
+../Core/Inc/pca9685.h:18:26: error: expected ')' before ';' token
+   18 | #define PinkyR_channel1 1;
+      |                          ^
+../Core/Src/pca9685.c:350:33: note: in expansion of macro 'PinkyR_channel1'
+  350 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/pca9685.c:350:31: note: to match this '('
+  350 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |                               ^
+../Core/Src/pca9685.c:350:10: error: too few arguments to function 'PCA9685_SetServoAngle'
+  350 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |          ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/pca9685.c:296:16: note: declared here
+  296 | PCA9685_STATUS PCA9685_SetServoAngle(uint8_t Channel, float Angle)
+      |                ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/pca9685.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+14:39:35 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/pca9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pca9685.d" -MT"Core/Src/pca9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pca9685.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:696:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  696 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:699:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  699 |                         CloseHand();
+      |                         ^~~~~~~~~
+In file included from ../Core/Src/pca9685.c:13:
+../Core/Src/pca9685.c: In function 'OpenHand':
+../Core/Inc/pca9685.h:18:26: error: expected ')' before ';' token
+   18 | #define PinkyR_channel1 1;
+      |                          ^
+../Core/Src/pca9685.c:350:33: note: in expansion of macro 'PinkyR_channel1'
+  350 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/pca9685.c:350:31: note: to match this '('
+  350 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |                               ^
+../Core/Src/pca9685.c:350:10: error: too few arguments to function 'PCA9685_SetServoAngle'
+  350 |          PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+      |          ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/pca9685.c:296:16: note: declared here
+  296 | PCA9685_STATUS PCA9685_SetServoAngle(uint8_t Channel, float Angle)
+      |                ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/pca9685.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+14:40:08 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/pca9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pca9685.d" -MT"Core/Src/pca9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pca9685.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:696:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  696 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:699:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  699 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+E:/Embedded/ARM/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `HAL_UART_RxCpltCallback':
+E:/Senior2 Mechatronics/Graduation Project/Embedded/Workspace_Humanoid/Humanoid_Blackbill2/Humanoid_Blackbill2/Debug/../Core/Src/main.c:699: undefined reference to `CloseHand'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:70: Humanoid_Blackbill2.elf] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+14:40:53 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/pca9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pca9685.d" -MT"Core/Src/pca9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pca9685.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:696:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  696 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:699:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  699 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.list
+Finished building: Humanoid_Blackbill2.bin
+ 
+ 
+14:42:06 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/pca9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pca9685.d" -MT"Core/Src/pca9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pca9685.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+14:46:08 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/pca9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pca9685.d" -MT"Core/Src/pca9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pca9685.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+15:33:20 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/pca9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pca9685.d" -MT"Core/Src/pca9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pca9685.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:696:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  696 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:699:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  699 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+15:35:16 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:33:2: error: stray '\302' in program
+   33 | } MotorConfig;
+      |  ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:699:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  699 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:702:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  702 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+15:35:30 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:699:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  699 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:702:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  702 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+15:36:04 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:72:36: error: stray '\302' in program
+   72 | MotorConfig Head_Up_Down = {&htim9, TIM_CHANNEL_2};
+      |                                    ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:704:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  704 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:707:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  707 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+15:38:17 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:702:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  702 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:705:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  705 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+15:39:03 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:703:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  703 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:706:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  706 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+15:39:19 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:704:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  704 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:707:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  707 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+16:23:21 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/pca9685.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pca9685.d" -MT"Core/Src/pca9685.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pca9685.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:711:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  711 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:714:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  714 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.list
+Finished building: Humanoid_Blackbill2.bin
+ 
+ 
+16:23:51 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:94:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   94 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:95:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   95 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:107:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  107 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:108:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  108 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:23:56 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:94:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   94 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:95:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   95 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:107:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  107 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:108:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  108 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:24:51 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:82:56: error: stray '\302' in program
+   82 | MotorConfig Shoulder_In_Left = {&htim5, TIM_CHANNEL_2}; // LAbel A`
+      |                                                        ^
+../Core/Src/main.c:94:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   94 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:95:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   95 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:107:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  107 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:108:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  108 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:25:01 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:82:55: error: stray '\302' in program
+   82 | MotorConfig Shoulder_In_Left = {&htim5,TIM_CHANNEL_2}; // LAbel A`
+      |                                                       ^
+../Core/Src/main.c:94:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   94 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:95:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   95 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:107:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  107 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:108:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  108 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:25:12 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:82:55: error: stray '\302' in program
+   82 | MotorConfig Shoulder_In_Left = {&htim5,TIM_CHANNEL_2}; // LAbel A`
+      |                                                       ^
+../Core/Src/main.c:94:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   94 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:95:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   95 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:107:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  107 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:108:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  108 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:25:46 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:80:55: error: stray '\302' in program
+   80 | MotorConfig Shoulder_In_Left ={&htim5, TIM_CHANNEL_2}; // LAbel A`
+      |                                                       ^
+../Core/Src/main.c:93:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   93 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:94:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   94 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:106:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  106 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:107:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  107 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:734:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  734 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:737:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  737 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:25:58 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:80:55: error: stray '\302' in program
+   80 | MotorConfig Shoulder_In_Left ={&htim5 ,TIM_CHANNEL_2}; // LAbel A`
+      |                                                       ^
+../Core/Src/main.c:93:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   93 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:94:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   94 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:106:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  106 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:107:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  107 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:734:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  734 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:737:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  737 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:26:17 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:80:55: error: stray '\302' in program
+   80 | MotorConfig Shoulder_In_Left = {&htim5,TIM_CHANNEL_2}; // LAbel A`
+      |                                                       ^
+../Core/Src/main.c:93:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   93 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:94:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   94 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:106:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  106 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:107:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  107 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:734:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  734 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:737:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  737 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:26:46 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:80:54: error: stray '\302' in program
+   80 | MotorConfig Shoulder_In_Left= {&htim5,TIM_CHANNEL_2}; // LAbel A`
+      |                                                      ^
+../Core/Src/main.c:93:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   93 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:94:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   94 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:106:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  106 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:107:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  107 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:734:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  734 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:737:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  737 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:26:59 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:84:54: error: stray '\302' in program
+   84 | MotorConfig Shoulder_In_Left= {&htim5,TIM_CHANNEL_2}; // LAbel A`
+      |                                                      ^
+../Core/Src/main.c:94:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   94 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:95:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   95 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:107:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  107 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:108:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  108 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:27:07 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:84:47: error: stray '\302' in program
+   84 | MotorConfig Shoulder = {&htim5,TIM_CHANNEL_2}; // LAbel A`
+      |                                               ^
+../Core/Src/main.c:94:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   94 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:95:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   95 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:107:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  107 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:108:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  108 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:28:01 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:94:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   94 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:95:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   95 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:107:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  107 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:108:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  108 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:28:29 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:94:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+   94 |         .PWM_Left_Channel = TIM_CHANNEL_2
+      |         ^
+../Core/Src/main.c:95:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+   95 |         .PWM_Right_Channel = TIM_CHANNEL_1
+      |         ^
+../Core/Src/main.c:107:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  107 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:108:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  108 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:32:49 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:107:9: error: 'TIM_HandleTypeDef' has no member named 'PWM_Left_Channel'
+  107 |         .PWM_Left_Channel = TIM_CHANNEL_3
+      |         ^
+../Core/Src/main.c:108:9: error: request for member 'PWM_Right_Channel' in something not a structure or union
+  108 |         .PWM_Right_Channel = TIM_CHANNEL_4
+      |         ^
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:33:02 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 

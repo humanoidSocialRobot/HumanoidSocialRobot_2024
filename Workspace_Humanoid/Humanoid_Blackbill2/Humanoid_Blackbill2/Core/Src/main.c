@@ -27,7 +27,23 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+typedef struct {
+    TIM_HandleTypeDef *timer;  // Pointer to the timer handle
+    uint32_t channel;           // Channel number
+}MotorConfig;
 
+typedef struct {
+    GPIO_TypeDef *enablePort;  // Pointer to the GPIO port for motor enable control
+    uint16_t EnableRight;          // Pin number 1 for direction control
+    uint16_t EnableLeft;          // Pin number 2 for direction control
+    GPIO_TypeDef *ISPort;     // Pointer to the GPIO port for direction control
+    uint16_t IS_Right;        // Pin number for motor enable control
+    uint16_t IS_Left;        // Pin number for motor enable control
+    TIM_HandleTypeDef *timer;  // Pointer to the timer handle for PWM
+    uint32_t PWM_Left_Channel;           // Channel number
+    uint32_t PWM_Right_Channel;           // Channel number
+
+}Dc_Motor;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -51,7 +67,46 @@ TIM_HandleTypeDef htim9;
 TIM_HandleTypeDef htim10;
 TIM_HandleTypeDef htim11;
 
+UART_HandleTypeDef huart6;
+
 /* USER CODE BEGIN PV */
+uint8_t tx_buffer[27]="Welcome to our robot!\n\r";
+uint8_t rx_data[1]; // 1 byte
+uint8_t rx_buffer[100];
+
+volatile uint32_t  Counter1=0;
+volatile uint32_t Counter2=0;
+
+
+MotorConfig MotorShoulderIN_Right = {&htim5, TIM_CHANNEL_1};  //Label A
+MotorConfig MotorShoulderIN_Left = {&htim5, TIM_CHANNEL_2};   //Label A'
+MotorConfig Head_Rotation = {&htim5, TIM_CHANNEL_3};
+MotorConfig Head_Up_Down = {&htim9,TIM_CHANNEL_2};
+
+Dc_Motor Motor_DC_Right = {
+    .enablePort  = GPIOC,
+    .EnableRight = GPIO_PIN_13,
+    .EnableLeft  = GPIO_PIN_14,
+    .ISPort      = GPIOB,
+    .IS_Right     = GPIO_PIN_5,
+	.IS_Left      = GPIO_PIN_4,
+    .timer       = &htim1,
+	.PWM_Left_Channel = TIM_CHANNEL_2,
+	.PWM_Right_Channel = TIM_CHANNEL_1
+
+};
+
+Dc_Motor Motor_DC_Left = {
+    .enablePort  = GPIOB,
+    .EnableRight = GPIO_PIN_15,
+    .EnableLeft  = GPIO_PIN_14,
+    .ISPort      = GPIOB,
+    .IS_Right     = GPIO_PIN_13,
+	.IS_Left      = GPIO_PIN_12,
+    .timer       = &htim1,
+	.PWM_Left_Channel = TIM_CHANNEL_3,
+	.PWM_Right_Channel = TIM_CHANNEL_4
+};
 
 /* USER CODE END PV */
 
@@ -66,28 +121,31 @@ static void MX_TIM9_Init(void);
 static void MX_TIM10_Init(void);
 static void MX_TIM11_Init(void);
 static void MX_TIM4_Init(void);
+static void MX_USART6_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-volatile uint32_t  counter=0;
-volatile uint32_t counter2=0;
 
-//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-//	counter  = __HAL_TIM_GET_COUNTER(&htim3);
-//	counter2 = __HAL_TIM_GET_COUNTER(&htim4);
+//
+//void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
+//	if(htim->Instance == TIM3 ){
+//		Counter1 = __HAL_TIM_GET_COUNTER(htim3);
+//	}
+//	else if(htim->Instance == TIM4){
+//		Counter2 = __HAL_TIM_GET_COUNTER(htim4);
+//	}
+//	else
+//	{
+//
+//	}
 //}
-//void HAL_TIM_CaptureCallback(TIM_HandleTypeDef *htim){
-////	counter = __HAL_TIM_GET_COUNTER(&htim3);
-////	counter2 = __HAL_TIM_GET_COUNTER(&htim4);
-//	__NOP();
-//}
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
-//		counter = __HAL_TIM_GET_COUNTER(&htim3);
-//		counter2 = __HAL_TIM_GET_COUNTER(&htim4);
-}
+
+
+// htim->Instance make an error in the drivers
+
 /* USER CODE END 0 */
 
 /**
@@ -126,48 +184,13 @@ int main(void)
   MX_TIM10_Init();
   MX_TIM11_Init();
   MX_TIM4_Init();
+  MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
 
   PCA9685_Init(&hi2c1);
 
 
-////Motor A الكت�? اليمين جوة
-//TIM5->CCR1=65.9;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
-//// MotorA' الكن�? الشمال جوة
-//TIM5->CCR2=81.4;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
-////Motor D
-//TIM5->CCR3=6.85;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
-////MotorD'
-//TIM9->CCR1=73.8;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
 
-////Motor C
-//TIM1->CCR1=4.29;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-
-////Motor C'
-//TIM5->CCR2=94.3;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
-//HAL_Delay(5000);
-
-////Motor B
-//TIM1->CCR3= 0;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-
-////Motor B'
-//TIM1->CCR3= 0;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
-
-//fingers
-//Right hand
-//PCA9685_SetServoAngle(1,  10);  //pinky
-
-//  PCA9685_SetServoAngle(1,  140);
-//  HAL_Delay(1000);
-//  PCA9685_SetServoAngle(1,  10);  //Pinky
 
 
 // In this example, the duty cycle is (off time - on time) / 4096 = (2048 - 0) / 4096 = 50%
@@ -179,184 +202,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	counter = TIM3->CNT;
-//	counter2 =  TIM4->CNT;
-	  /*
-// pinkey Right hand (1)
-PCA9685_SetServoAngle(1,  140);
-//Ring Right hand (2)
-PCA9685_SetServoAngle(0,  140);
-//middle Right hand (3)
-PCA9685_SetServoAngle(2,  140);
-//index Right hand (4)
-PCA9685_SetServoAngle(3,  170);
-//thumb Right hand (5)
-PCA9685_SetServoAngle(4,  15);
-
-// pinkey Left hand (1')
-PCA9685_SetServoAngle(5,  0);
-//Ring Left hand (2')
-PCA9685_SetServoAngle(7,  0);
-//middle Left hand (3')
-PCA9685_SetServoAngle(6,  180);
-//index Left hand (4')
-PCA9685_SetServoAngle(8,  0);
-//thumb Left hand (5')
-PCA9685_SetServoAngle(9,  180);
-HAL_Delay(3000);
-
-// pinkey Right hand (1)
-PCA9685_SetServoAngle(1,  10);
-//Ring Right hand (2)
-PCA9685_SetServoAngle(0,  0);
-//middle Right hand (3)
-PCA9685_SetServoAngle(2,  0);
-//index Right hand (4)
-PCA9685_SetServoAngle(3,  75);
-//thumb Right hand (5)
-PCA9685_SetServoAngle(4,  75);
-
-// pinkey Left hand (1')
-PCA9685_SetServoAngle(5,  180);
-//Ring Left hand (2')
-PCA9685_SetServoAngle(7,  180);
-//middle Left hand (3')
-PCA9685_SetServoAngle(6,  0);
-//index Left hand (4')
-PCA9685_SetServoAngle(8,  180);
-//thumb Left hand (5')
-PCA9685_SetServoAngle(9,  90);
-HAL_Delay(3000);
-*/
-//// D rest right
-//PCA9685_SetServoAngle(10,  10);
-//// D'
-//PCA9685_SetServoAngle(11,  150);
-//// C elko3 right
-//PCA9685_SetServoAngle(12,  150);
-//// C'
-//PCA9685_SetServoAngle(13,  150);
-//// B arm right
-////PCA9685_SetServoAngle(14,  90);
-//// B'
-//PCA9685_SetServoAngle(15,  50);
-//HAL_Delay(5000);
-//// D rest right
-//PCA9685_SetServoAngle(10,  80);
-//// D'
-//PCA9685_SetServoAngle(11,  30);
-//// C elko3 right
-//PCA9685_SetServoAngle(12,  55);
-//// C'
-//PCA9685_SetServoAngle(13,  40);
-//// B arm right
-////PCA9685_SetServoAngle(14,  90);
-//// B'
-//PCA9685_SetServoAngle(15,  80);
-//HAL_Delay(5000);
-
-
-////Motor A الكت�? اليمين جوة
-//TIM5->CCR1=45.2;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
-////MotorA' الكت�? اللشمال جوة
-//TIM5->CCR2=40;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
-//HAL_Delay(5000);
-////Motor A الكت�? اليمين جوة
-//TIM5->CCR1=86.5;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
-////MotorA' ا
-//TIM5->CCR2=130;          //112.3;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
-//HAL_Delay(5000);
-
-//
-//	  TIM5->CCR3=2;
-//	  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
-//	  HAL_Delay(2000);
-//	  TIM5->CCR3=100;
-//      HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
-//	  TIM5->CCR3=120;
-//	  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
-//	  HAL_Delay(2000);
-
-//      //Rotating head Right&Left
-//	  TIM9->CCR2=30;
-//	  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_2);
-//	  HAL_Delay(2000);
-//	  TIM9->CCR2=100;
-//	  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_2);
-//	  HAL_Delay(2000);
-
-
-
-
-
-
-
-//Motor D
-//TIM5->CCR3=32.4;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
-//HAL_Delay(5000);
-//TIM5->CCR3=68.5;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
-//HAL_Delay(5000);
-//
-////MotorD'
-//TIM9->CCR1=4.29;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
-//HAL_Delay(5000);
-//TIM5->CCR1=75;
-//HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
-//HAL_Delay(5000);
-
-////Motor C
-//TIM1->CCR1=4.29;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-//HAL_Delay(5000);
-//TIM1->CCR1=75;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-//HAL_Delay(5000);
-
-////Motor C'
-//TIM1->CCR2=83.9;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-//HAL_Delay(5000);
-//TIM1->CCR2=104.6;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-//HAL_Delay(5000);
-
-
-////Motor B
-//TIM1->CCR3= 50;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-//HAL_Delay(5000);
-//TIM1->CCR3=80;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-//HAL_Delay(5000);
-//
-//
-////Motor B'
-//
-//TIM1->CCR3= 50;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
-//HAL_Delay(5000);
-//TIM1->CCR3=80;
-//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
-//HAL_Delay(5000);
-
-
-
-
-HAL_GPIO_WritePin(GPIOC, 13, 1); //enable R
-HAL_GPIO_WritePin(GPIOC, 14, 1); //enable L
-HAL_GPIO_WritePin(GPIOC, 15, 0); //is left
-HAL_GPIO_WritePin(GPIOB, 5, 0);  //is Right
-TIM1->CCR1=40;    //PWM right  freq 100 ARR 255
-HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-
-
 
 
 
@@ -365,6 +210,7 @@ HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	 HAL_UART_Transmit(&huart6, tx_buffer, 27, 10);
   }
   /* USER CODE END 3 */
 }
@@ -796,6 +642,39 @@ static void MX_TIM11_Init(void)
 }
 
 /**
+  * @brief USART6 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART6_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART6_Init 0 */
+
+  /* USER CODE END USART6_Init 0 */
+
+  /* USER CODE BEGIN USART6_Init 1 */
+
+  /* USER CODE END USART6_Init 1 */
+  huart6.Instance = USART6;
+  huart6.Init.BaudRate = 115200;
+  huart6.Init.WordLength = UART_WORDLENGTH_8B;
+  huart6.Init.StopBits = UART_STOPBITS_1;
+  huart6.Init.Parity = UART_PARITY_NONE;
+  huart6.Init.Mode = UART_MODE_TX_RX;
+  huart6.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart6.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART6_Init 2 */
+
+  /* USER CODE END USART6_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -813,23 +692,23 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, MotorR_ER_Pin|MotorR_EL_Pin|MotorR_isL_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, MotorR_ER_Pin|MotorR_EL_Pin|GPIO_OUTPUT_for_UART_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, MotorL_isL_Pin|MotorL_isR_Pin|MotorL_EL_Pin|MotorL_ER_Pin
-                          |MotorR_isR_Pin, GPIO_PIN_RESET);
+                          |MotorR_isL_Pin|MotorR_isR_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : MotorR_ER_Pin MotorR_EL_Pin MotorR_isL_Pin */
-  GPIO_InitStruct.Pin = MotorR_ER_Pin|MotorR_EL_Pin|MotorR_isL_Pin;
+  /*Configure GPIO pins : MotorR_ER_Pin MotorR_EL_Pin GPIO_OUTPUT_for_UART_Pin */
+  GPIO_InitStruct.Pin = MotorR_ER_Pin|MotorR_EL_Pin|GPIO_OUTPUT_for_UART_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : MotorL_isL_Pin MotorL_isR_Pin MotorL_EL_Pin MotorL_ER_Pin
-                           MotorR_isR_Pin */
+                           MotorR_isL_Pin MotorR_isR_Pin */
   GPIO_InitStruct.Pin = MotorL_isL_Pin|MotorL_isR_Pin|MotorL_EL_Pin|MotorL_ER_Pin
-                          |MotorR_isR_Pin;
+                          |MotorR_isL_Pin|MotorR_isR_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -840,87 +719,30 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-//funtion written by salma&yara
-
-void SERV0_Angle(uint32_t Timer_number, uint32_t Channel, uint32_t  angle , float start )
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	float Duty_Cycle;
-	Duty_Cycle= start;
-	switch(Timer_number){
-	case 1:{
-		switch(Channel){
-		case 1:
-			{
-				TIM1->CCR1=Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-			}
-		case 2:
-			{
-				TIM1->CCR2= Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-			}
-		case 3:
-			{
-				TIM1->CCR3= Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-			}
-		case 4:
-			{
-				TIM1->CCR4= Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
-			}
+  /* Prevent unused argument(s) compilation warning */
+  UNUSED(huart);
+  /* NOTE: This function should not be modified, when the callback is needed,
+           the HAL_UART_RxCpltCallback could be implemented in the user file
+   */
+    if(huart->Instance == USART1)
+    {
+		if(rx_data[0] == 55){
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
 		}
+		else if(rx_data[0] == 1){
+			OpenHand();
 		}
-	case 3:{
-		switch(Channel){
-		case 1:
-			{
-				TIM3->CCR1= Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-			}
-		case 2:
-			{
-				TIM3->CCR2= Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
-			}
-		case 3:
-			{
-				TIM3->CCR3= Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
-			}
+		else if(rx_data[0] == 2){
+			CloseHand();
 		}
-	}
-	case 5:{
-		switch(Channel){
-		case 1:
-			{
-				TIM5->CCR1= Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
-			}
-		case 2:
-			{
-				TIM5->CCR2= Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
-			}
-		case 3:
-			{
-				TIM5->CCR3= Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
-			}
-		}
-		}
-	case 9:{
-		switch(Channel){
-		case 2:
-			{
-				TIM9->CCR2= Duty_Cycle;
-				HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_2);
-			}
-		}
-		}
-
-	}
+		else {}
+    }
 }
+
+
+
 /* USER CODE END 4 */
 
 /**

@@ -1,31 +1,30 @@
-14:47:02 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+16:33:02 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
 make -j3 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'MX_TIM3_Init':
-../Core/Src/main.c:534:27: warning: unused variable 'sMasterConfig' [-Wunused-variable]
-  534 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
-      |                           ^~~~~~~~~~~~~
-../Core/Src/main.c: In function 'MX_TIM4_Init':
-../Core/Src/main.c:583:27: warning: unused variable 'sMasterConfig' [-Wunused-variable]
-  583 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
-      |                           ^~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:735:25: warning: implicit declaration of function 'OpenHand' [-Wimplicit-function-declaration]
+  735 |                         OpenHand();
+      |                         ^~~~~~~~
+../Core/Src/main.c:738:25: warning: implicit declaration of function 'CloseHand' [-Wimplicit-function-declaration]
+  738 |                         CloseHand();
+      |                         ^~~~~~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Humanoid_Blackbill2.elf
  
 arm-none-eabi-size  Humanoid_Blackbill2.elf 
 arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
    text	   data	    bss	    dec	    hex	filename
-  21276	     20	   2172	  23468	   5bac	Humanoid_Blackbill2.elf
+  26276	     48	   2240	  28564	   6f94	Humanoid_Blackbill2.elf
 arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
 Finished building: default.size.stdout
  
-Finished building: Humanoid_Blackbill2.hex
 arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
  
 Finished building: Humanoid_Blackbill2.bin
 Finished building: Humanoid_Blackbill2.list
  
  
 
-14:47:04 Build Finished. 0 errors, 2 warnings. (took 2s.139ms)
+16:33:04 Build Finished. 0 errors, 2 warnings. (took 2s.272ms)
 
