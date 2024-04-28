@@ -6,9 +6,7 @@
 ../Core/Src/pca9685.c:146:16:PCA9685_SubaddressRespond	16	static
 ../Core/Src/pca9685.c:161:16:PCA9685_AllCallRespond	16	static
 ../Core/Src/pca9685.c:177:16:PCA9685_SetPwmFrequency	40	static
-../Core/Src/pca9685.c:218:16:PCA9685_SetPwm	40	static
-../Core/Src/pca9685.c:251:16:PCA9685_SetPin	16	static
-../Core/Src/pca9685.c:296:16:PCA9685_SetServoAngle	24	static
-../Core/Src/pca9685.c:321:16:PCA9685_Init	16	static
-../Core/Src/pca9685.c:347:7:OpenHand	8	static
-../Core/Src/pca9685.c:379:7:CloseHand	8	static
+../Core/Src/pca9685.c:220:16:PCA9685_SetPwm	40	static
+../Core/Src/pca9685.c:253:16:PCA9685_SetPin	16	static
+../Core/Src/pca9685.c:298:16:PCA9685_SetServoAngle	24	static
+../Core/Src/pca9685.c:323:16:PCA9685_Init	16	static

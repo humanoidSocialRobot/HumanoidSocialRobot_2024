@@ -23,27 +23,14 @@
 /* USER CODE BEGIN Includes */
 
 #include "pca9685.h"
+#include"MotorDriver.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-typedef struct {
-    TIM_HandleTypeDef *timer;  // Pointer to the timer handle
-    uint32_t channel;           // Channel number
-}MotorConfig;
 
-typedef struct {
-    GPIO_TypeDef *enablePort;  // Pointer to the GPIO port for motor enable control
-    uint16_t EnableRight;          // Pin number 1 for direction control
-    uint16_t EnableLeft;          // Pin number 2 for direction control
-    GPIO_TypeDef *ISPort;     // Pointer to the GPIO port for direction control
-    uint16_t IS_Right;        // Pin number for motor enable control
-    uint16_t IS_Left;        // Pin number for motor enable control
-    TIM_HandleTypeDef *timer;  // Pointer to the timer handle for PWM
-    uint32_t PWM_Left_Channel;           // Channel number
-    uint32_t PWM_Right_Channel;           // Channel number
 
-}Dc_Motor;
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -60,6 +47,7 @@ typedef struct {
 I2C_HandleTypeDef hi2c1;
 
 TIM_HandleTypeDef htim1;
+TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 TIM_HandleTypeDef htim5;
@@ -67,45 +55,48 @@ TIM_HandleTypeDef htim9;
 TIM_HandleTypeDef htim10;
 TIM_HandleTypeDef htim11;
 
-UART_HandleTypeDef huart6;
+UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-uint8_t tx_buffer[27]="Welcome to our robot!\n\r";
-uint8_t rx_data[1]; // 1 byte
-uint8_t rx_buffer[100];
-
-volatile uint32_t  Counter1=0;
-volatile uint32_t Counter2=0;
+uint8_t txBufferGArrU8[27]="Welcome to our robot!\n\r"; // Buffer for UART transmission
+uint8_t rxDataGArrU8[1];  // 1-byte buffer for receiving UART data
 
 
-MotorConfig MotorShoulderIN_Right = {&htim5, TIM_CHANNEL_1};  //Label A
-MotorConfig MotorShoulderIN_Left = {&htim5, TIM_CHANNEL_2};   //Label A'
-MotorConfig Head_Rotation = {&htim5, TIM_CHANNEL_3};
-MotorConfig Head_Up_Down = {&htim9,TIM_CHANNEL_2};
+volatile uint32_t  motorRightCounterGDU32=0; // Counter value for Right motor encoder
+volatile uint32_t  motorLeftCounterGDU32=0;  // Counter value for left motor encoder
 
-Dc_Motor Motor_DC_Right = {
-    .enablePort  = GPIOC,
-    .EnableRight = GPIO_PIN_13,
-    .EnableLeft  = GPIO_PIN_14,
-    .ISPort      = GPIOB,
-    .IS_Right     = GPIO_PIN_5,
-	.IS_Left      = GPIO_PIN_4,
-    .timer       = &htim1,
-	.PWM_Left_Channel = TIM_CHANNEL_2,
-	.PWM_Right_Channel = TIM_CHANNEL_1
+volatile uint8_t UART1_flag_gb=0; // Flag indicating the status of UART communication
+
+MotorConfig motorShoulderInRightStructG = {&htim5, TIM_CHANNEL_1}; // Configuration for shoulder motor right Label A
+MotorConfig motorShoulderInLeftStructG = {&htim5, TIM_CHANNEL_2}; // Configuration for shoulder motor left Label A'
+MotorConfig headRotationStructG = {&htim5, TIM_CHANNEL_3}; // Configuration for head rotation
+MotorConfig headUpDownStructG = {&htim9,TIM_CHANNEL_2}; // Configuration for head up-down
+
+
+Dc_Motor motorDCRightStructG = {
+
+    .enablePort        = GPIOC,
+    .EnableRight       = GPIO_PIN_13,
+    .EnableLeft        = GPIO_PIN_14,
+    .ISPort            = GPIOB,
+    .IS_Right          = GPIO_PIN_5,
+	.IS_Left           = GPIO_PIN_4,
+    .timer             = &htim2,
+	.PWM_Left_Channel  = TIM_CHANNEL_1,
+	.PWM_Right_Channel = TIM_CHANNEL_2
 
 };
 
-Dc_Motor Motor_DC_Left = {
-    .enablePort  = GPIOB,
-    .EnableRight = GPIO_PIN_15,
-    .EnableLeft  = GPIO_PIN_14,
-    .ISPort      = GPIOB,
-    .IS_Right     = GPIO_PIN_13,
-	.IS_Left      = GPIO_PIN_12,
-    .timer       = &htim1,
-	.PWM_Left_Channel = TIM_CHANNEL_3,
-	.PWM_Right_Channel = TIM_CHANNEL_4
+Dc_Motor motorDCLeftStructG = {
+    .enablePort        = GPIOB,
+    .EnableRight       = GPIO_PIN_15,
+    .EnableLeft        = GPIO_PIN_14,
+    .ISPort            = GPIOB,
+    .IS_Right          = GPIO_PIN_13,
+	.IS_Left           = GPIO_PIN_12,
+    .timer             = &htim1,
+	.PWM_Left_Channel  = TIM_CHANNEL_4,
+	.PWM_Right_Channel = TIM_CHANNEL_1
 };
 
 /* USER CODE END PV */
@@ -121,7 +112,8 @@ static void MX_TIM9_Init(void);
 static void MX_TIM10_Init(void);
 static void MX_TIM11_Init(void);
 static void MX_TIM4_Init(void);
-static void MX_USART6_UART_Init(void);
+static void MX_TIM2_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -144,7 +136,7 @@ static void MX_USART6_UART_Init(void);
 //}
 
 
-// htim->Instance make an error in the drivers
+
 
 /* USER CODE END 0 */
 
@@ -184,34 +176,37 @@ int main(void)
   MX_TIM10_Init();
   MX_TIM11_Init();
   MX_TIM4_Init();
-  MX_USART6_UART_Init();
+  MX_TIM2_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
   PCA9685_Init(&hi2c1);
-
-
-
-
-
-// In this example, the duty cycle is (off time - on time) / 4096 = (2048 - 0) / 4096 = 50%
- //PCA9685_STATUS PCA9685_SetPwm(uint8_t Channel, uint16_t OnTime, uint16_t OffTime);
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-
-
-
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	 HAL_UART_Transmit(&huart6, tx_buffer, 27, 10);
-  }
+//	 HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10);
+//	 HAL_Delay(1000);
+  HAL_UART_Receive_IT(&huart1, rxDataGArrU8, 1);
+	 if(UART1_flag_gb == 1){
+		 UART1_flag_gb = 0;
+		if(rxDataGArrU8[0] == 1){
+			OpenHand();
+		}
+		else if(rxDataGArrU8[0] == 2){
+			CloseHand();
+		}
+		else {}
+		   }
+
+
+
+
+	 }
   /* USER CODE END 3 */
 }
 
@@ -342,14 +337,6 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
-  {
-    Error_Handler();
-  }
   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
   {
     Error_Handler();
@@ -369,6 +356,59 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 2 */
   HAL_TIM_MspPostInit(&htim1);
+
+}
+
+/**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 0;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 4294967295;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+  HAL_TIM_MspPostInit(&htim2);
 
 }
 
@@ -642,35 +682,35 @@ static void MX_TIM11_Init(void)
 }
 
 /**
-  * @brief USART6 Initialization Function
+  * @brief USART1 Initialization Function
   * @param None
   * @retval None
   */
-static void MX_USART6_UART_Init(void)
+static void MX_USART1_UART_Init(void)
 {
 
-  /* USER CODE BEGIN USART6_Init 0 */
+  /* USER CODE BEGIN USART1_Init 0 */
 
-  /* USER CODE END USART6_Init 0 */
+  /* USER CODE END USART1_Init 0 */
 
-  /* USER CODE BEGIN USART6_Init 1 */
+  /* USER CODE BEGIN USART1_Init 1 */
 
-  /* USER CODE END USART6_Init 1 */
-  huart6.Instance = USART6;
-  huart6.Init.BaudRate = 115200;
-  huart6.Init.WordLength = UART_WORDLENGTH_8B;
-  huart6.Init.StopBits = UART_STOPBITS_1;
-  huart6.Init.Parity = UART_PARITY_NONE;
-  huart6.Init.Mode = UART_MODE_TX_RX;
-  huart6.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart6.Init.OverSampling = UART_OVERSAMPLING_16;
-  if (HAL_UART_Init(&huart6) != HAL_OK)
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART6_Init 2 */
+  /* USER CODE BEGIN USART1_Init 2 */
 
-  /* USER CODE END USART6_Init 2 */
+  /* USER CODE END USART1_Init 2 */
 
 }
 
@@ -695,8 +735,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, MotorR_ER_Pin|MotorR_EL_Pin|GPIO_OUTPUT_for_UART_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, MotorL_isL_Pin|MotorL_isR_Pin|MotorL_EL_Pin|MotorL_ER_Pin
-                          |MotorR_isL_Pin|MotorR_isR_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1|MotorL_isL_Pin|MotorL_isR_Pin|MotorL_EL_Pin
+                          |MotorL_ER_Pin|MotorR_isL_Pin|MotorR_isR_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : MotorR_ER_Pin MotorR_EL_Pin GPIO_OUTPUT_for_UART_Pin */
   GPIO_InitStruct.Pin = MotorR_ER_Pin|MotorR_EL_Pin|GPIO_OUTPUT_for_UART_Pin;
@@ -705,10 +745,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : MotorL_isL_Pin MotorL_isR_Pin MotorL_EL_Pin MotorL_ER_Pin
-                           MotorR_isL_Pin MotorR_isR_Pin */
-  GPIO_InitStruct.Pin = MotorL_isL_Pin|MotorL_isR_Pin|MotorL_EL_Pin|MotorL_ER_Pin
-                          |MotorR_isL_Pin|MotorR_isR_Pin;
+  /*Configure GPIO pins : PB1 MotorL_isL_Pin MotorL_isR_Pin MotorL_EL_Pin
+                           MotorL_ER_Pin MotorR_isL_Pin MotorR_isR_Pin */
+  GPIO_InitStruct.Pin = GPIO_PIN_1|MotorL_isL_Pin|MotorL_isR_Pin|MotorL_EL_Pin
+                          |MotorL_ER_Pin|MotorR_isL_Pin|MotorR_isR_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -726,22 +766,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   /* NOTE: This function should not be modified, when the callback is needed,
            the HAL_UART_RxCpltCallback could be implemented in the user file
    */
-    if(huart->Instance == USART1)
-    {
-		if(rx_data[0] == 55){
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
-		}
-		else if(rx_data[0] == 1){
-			OpenHand();
-		}
-		else if(rx_data[0] == 2){
-			CloseHand();
-		}
-		else {}
-    }
+	if(huart->Instance = USART1){
+		UART1_flag_gb = 1;
+	}
 }
-
-
 
 /* USER CODE END 4 */
 

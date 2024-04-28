@@ -1,0 +1,4 @@
+../Core/Src/MotorDriver.c:23:7:OpenHand	8	static
+../Core/Src/MotorDriver.c:55:7:CloseHand	8	static
+../Core/Src/MotorDriver.c:82:7:HelloWelcome	8	static
+../Core/Src/MotorDriver.c:104:7:HoldObject	8	static

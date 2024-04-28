@@ -212,6 +212,8 @@ PCA9685_STATUS PCA9685_SetPwmFrequency(uint16_t Frequency)
   * @param  OnTime: The ON time (pulse start) value for the PWM signal (in ticks).
   * @param  OffTime: The OFF time (pulse end) value for the PWM signal (in ticks).
   * @note   The ON time and OFF time values determine the duty cycle of the PWM signal.
+  *			Ex: the duty cycle is = (off time - on time) / 4096 = (2048 - 0) / 4096 = 50%
+  *
   *         The tick value represents a fraction of the PWM period, with 4096 ticks per period.
   * @retval PCA9685_STATUS: PCA9685_OK if the PWM setting is successful, PCA9685_ERROR otherwise.
   */
@@ -344,61 +346,3 @@ PCA9685_STATUS PCA9685_Init(I2C_HandleTypeDef *hi2c)
   * @note   This function sets the angles of servo motors connected to the PCA9685 device to simulate an open hand gesture.
   *         Each servo motor corresponds to a finger of the hand, and the angles are adjusted accordingly to open the hand.
   */
- void OpenHand(void)
- {
-	 //Pinky Right hand (1)
-	 PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
-	 //Ring Right hand (2)
-	 PCA9685_SetServoAngle(RingR_channel0,  140);
-	 //middle Right hand (3)
-	 PCA9685_SetServoAngle(MiddleR_channel2,  140);
-	 //index Right hand (4)
-	 PCA9685_SetServoAngle(IndexR_channel3,  170);
-	 //thumb Right hand (5)
-	 PCA9685_SetServoAngle(ThumbR_channel4,  15);
-
-	 //Pinky Left hand (1')
-	 PCA9685_SetServoAngle(PinkyL_channel5,  0);
-	 //Ring Left hand (2')
-	 PCA9685_SetServoAngle(RingL_channel7,  0);
-	 //middle Left hand (3')
-	 PCA9685_SetServoAngle(MiddleL_channel6,  180);
-	 //index Left hand (4')
-	 PCA9685_SetServoAngle(IndexL_channel8,  0);
-	 //thumb Left hand (5')
-	 PCA9685_SetServoAngle(ThumbL_channel9,  180);
-
- }
-
- /**
-   * @fn     CloseHand
-   * @brief  Closes the hand by setting the angles of servo motors to simulate a closed hand gesture.
-   * @note   This function sets the angles of servo motors connected to the PCA9685 device to simulate a closed hand gesture.
-   *         Each servo motor corresponds to a finger of the hand, and the angles are adjusted accordingly to close the hand.
-   */
- void CloseHand(void)
-  {
-
- 	 //pinky Right hand (1)
- 	 PCA9685_SetServoAngle(1,  10);
- 	 //Ring Right hand (2)
- 	 PCA9685_SetServoAngle(0,  0);
- 	 //middle Right hand (3)
- 	 PCA9685_SetServoAngle(2,  0);
- 	 //index Right hand (4)
- 	 PCA9685_SetServoAngle(3,  75);
- 	 //thumb Right hand (5)
- 	 PCA9685_SetServoAngle(4,  75);
-
- 	 //pinkey Left hand (1')
- 	 PCA9685_SetServoAngle(5,  180);
- 	 //Ring Left hand (2')
- 	 PCA9685_SetServoAngle(7,  180);
- 	 //middle Left hand (3')
- 	 PCA9685_SetServoAngle(6,  0);
- 	 //index Left hand (4')
- 	 PCA9685_SetServoAngle(8,  180);
- 	 //thumb Left hand (5')
- 	 PCA9685_SetServoAngle(9,  90);
-
-  }

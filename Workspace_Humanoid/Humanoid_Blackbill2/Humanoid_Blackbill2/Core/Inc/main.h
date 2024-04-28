@@ -63,6 +63,8 @@ void Error_Handler(void);
 #define MotorR_ER_GPIO_Port GPIOC
 #define MotorR_EL_Pin GPIO_PIN_14
 #define MotorR_EL_GPIO_Port GPIOC
+#define TIM1_CH2ERPWML_Pin GPIO_PIN_5
+#define TIM1_CH2ERPWML_GPIO_Port GPIOA
 #define TIM3_CH1_Encoder1B_Pin GPIO_PIN_6
 #define TIM3_CH1_Encoder1B_GPIO_Port GPIOA
 #define TIM3_CH2_Encoder1A_Pin GPIO_PIN_7
@@ -77,14 +79,12 @@ void Error_Handler(void);
 #define MotorL_ER_GPIO_Port GPIOB
 #define GPIO_OUTPUT_for_UART_Pin GPIO_PIN_8
 #define GPIO_OUTPUT_for_UART_GPIO_Port GPIOC
-#define TIM1_CH1ERPWMR_Pin GPIO_PIN_8
-#define TIM1_CH1ERPWMR_GPIO_Port GPIOA
-#define TIM1_CH2ERPWML_Pin GPIO_PIN_9
-#define TIM1_CH2ERPWML_GPIO_Port GPIOA
-#define TIM1_CH3ELPWMR_Pin GPIO_PIN_10
-#define TIM1_CH3ELPWMR_GPIO_Port GPIOA
+#define TIM1_CH1_ELPWMR_Pin GPIO_PIN_8
+#define TIM1_CH1_ELPWMR_GPIO_Port GPIOA
 #define TIM1_CH4ELPWML_Pin GPIO_PIN_11
 #define TIM1_CH4ELPWML_GPIO_Port GPIOA
+#define TIM2_CH2_ERPWMR_Pin GPIO_PIN_3
+#define TIM2_CH2_ERPWMR_GPIO_Port GPIOB
 #define MotorR_isL_Pin GPIO_PIN_4
 #define MotorR_isL_GPIO_Port GPIOB
 #define MotorR_isR_Pin GPIO_PIN_5
