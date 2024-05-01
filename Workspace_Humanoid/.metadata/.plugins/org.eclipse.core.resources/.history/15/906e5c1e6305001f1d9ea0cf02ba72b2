@@ -1,0 +1,179 @@
+/*
+ * MotorDriver.c
+ *
+ *  Created on: Apr 28, 2024
+ *      Author: salma & yara
+ *
+ */
+
+
+#include "MotorDriver.h"
+#include "pca9685.h"
+#include "math.h"
+
+
+MotorConfig motorShoulderInRightStructG = {&htim5, TIM_CHANNEL_1}; // Configuration for shoulder motor right Label A
+MotorConfig motorShoulderInLeftStructG = {&htim5, TIM_CHANNEL_2}; // Configuration for shoulder motor left Label A'
+MotorConfig headRotationStructG = {&htim5, TIM_CHANNEL_3}; // Configuration for head rotation
+MotorConfig headUpDownStructG = {&htim9,TIM_CHANNEL_2}; // Configuration for head up-down
+
+
+Dc_Motor motorDCRightStructG = {
+
+    .enablePort        = GPIOC,
+    .EnableRight       = GPIO_PIN_13,
+    .EnableLeft        = GPIO_PIN_14,
+    .ISPort            = GPIOB,
+    .IS_Right          = GPIO_PIN_5,
+	.IS_Left           = GPIO_PIN_4,
+    .timer             = &htim2,
+	.PWM_Left_Channel  = TIM_CHANNEL_1,
+	.PWM_Right_Channel = TIM_CHANNEL_2
+
+};
+
+Dc_Motor motorDCLeftStructG = {
+    .enablePort        = GPIOB,
+    .EnableRight       = GPIO_PIN_15,
+    .EnableLeft        = GPIO_PIN_14,
+    .ISPort            = GPIOB,
+    .IS_Right          = GPIO_PIN_13,
+	.IS_Left           = GPIO_PIN_12,
+    .timer             = &htim1,
+	.PWM_Left_Channel  = TIM_CHANNEL_4,
+	.PWM_Right_Channel = TIM_CHANNEL_1
+};
+
+/**
+  * @fn     OpenHand
+  * @brief  Opens the hand by setting the angles of servo motors to simulate an open hand gesture.
+  * @note   This function sets the angles of servo motors connected to the PCA9685 device to simulate an open hand gesture.
+  *         Each servo motor corresponds to a finger of the hand, and the angles are adjusted accordingly to open the hand.
+  */
+ void OpenHand(void)
+ {
+	 //Pinky Right hand (1)
+	 PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+	 //Ring Right hand (2)
+	 PCA9685_SetServoAngle(RingR_channel0,  140);
+	 //middle Right hand (3)
+	 PCA9685_SetServoAngle(MiddleR_channel2,  140);
+	 //index Right hand (4)
+	 PCA9685_SetServoAngle(IndexR_channel3,  170);
+	 //thumb Right hand (5)
+	 PCA9685_SetServoAngle(ThumbR_channel4,  15);
+
+	 //Pinky Left hand (1')
+	 PCA9685_SetServoAngle(PinkyL_channel5,  0);
+	 //Ring Left hand (2')
+	 PCA9685_SetServoAngle(RingL_channel7,  0);
+	 //middle Left hand (3')
+	 PCA9685_SetServoAngle(MiddleL_channel6,  180);
+	 //index Left hand (4')
+	 PCA9685_SetServoAngle(IndexL_channel8,  0);
+	 //thumb Left hand (5')
+	 PCA9685_SetServoAngle(ThumbL_channel9,  180);
+
+ }
+
+ /**
+   * @fn     CloseHand
+   * @brief  Closes the hand by setting the angles of servo motors to simulate a closed hand gesture.
+   * @note   This function sets the angles of servo motors connected to the PCA9685 device to simulate a closed hand gesture.
+   *         Each servo motor corresponds to a finger of the hand, and the angles are adjusted accordingly to close the hand.
+   */
+ void CloseHand(void)
+  {
+
+ 	 //pinky Right hand (1)
+ 	 PCA9685_SetServoAngle(1,  10);
+ 	 //Ring Right hand (2)
+ 	 PCA9685_SetServoAngle(0,  0);
+ 	 //middle Right hand (3)
+ 	 PCA9685_SetServoAngle(2,  0);
+ 	 //index Right hand (4)
+ 	 PCA9685_SetServoAngle(3,  75);
+ 	 //thumb Right hand (5)
+ 	 PCA9685_SetServoAngle(4,  75);
+
+ 	 //pinkey Left hand (1')
+ 	 PCA9685_SetServoAngle(5,  180);
+ 	 //Ring Left hand (2')
+ 	 PCA9685_SetServoAngle(7,  180);
+ 	 //middle Left hand (3')
+ 	 PCA9685_SetServoAngle(6,  0);
+ 	 //index Left hand (4')
+ 	 PCA9685_SetServoAngle(8,  180);
+ 	 //thumb Left hand (5')
+ 	 PCA9685_SetServoAngle(9,  90);
+
+  }
+
+ void HelloWelcome( ){
+	 //Pinky Right hand (1)
+	 PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+	 //Ring Right hand (2)
+	 PCA9685_SetServoAngle(RingR_channel0,  140);
+	 //middle Right hand (3)
+	 PCA9685_SetServoAngle(MiddleR_channel2,  140);
+	 //index Right hand (4)
+	 PCA9685_SetServoAngle(IndexR_channel3,  170);
+	 //thumb Right hand (5)
+	 PCA9685_SetServoAngle(ThumbR_channel4,  15);
+
+	 // D rest right
+	 PCA9685_SetServoAngle(10,  10);
+	 // C elbow right
+	 PCA9685_SetServoAngle(12,  150);
+	 // B Shoulder OUT right
+	PCA9685_SetServoAngle(14,  90);
+	//A Shoulder IN Right
+	 //MotorShoulderIN_Right.timer->Instance->CCR1=45.2;
+ }
+
+ void HoldObject(void)
+ {
+
+	     //Pinky Right hand (1)
+	 	 PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+	 	 //Ring Right hand (2)
+	 	 PCA9685_SetServoAngle(RingR_channel0,  140);
+	 	 //middle Right hand (3)
+	 	 PCA9685_SetServoAngle(MiddleR_channel2,  140);
+	 	 //index Right hand (4)
+	 	 PCA9685_SetServoAngle(IndexR_channel3,  170);
+	 	 //thumb Right hand (5)
+	 	 PCA9685_SetServoAngle(ThumbR_channel4,  15);
+
+	 	 //Pinky Left hand (1')
+	 	 PCA9685_SetServoAngle(PinkyL_channel5,  0);
+	 	 //Ring Left hand (2')
+	 	 PCA9685_SetServoAngle(RingL_channel7,  0);
+	 	 //middle Left hand (3')
+	 	 PCA9685_SetServoAngle(MiddleL_channel6,  180);
+	 	 //index Left hand (4')
+	 	 PCA9685_SetServoAngle(IndexL_channel8,  0);
+	 	 //thumb Left hand (5')
+	 	 PCA9685_SetServoAngle(ThumbL_channel9,  180);
+
+	    // D rest right
+	 	PCA9685_SetServoAngle(10,  10);
+	 	// D'
+	 	PCA9685_SetServoAngle(11,  150);
+	 	// C elbow right
+	 	PCA9685_SetServoAngle(12,  150);
+	 	// C'
+	 	PCA9685_SetServoAngle(13,  150);
+	 	// B arm right
+	 	PCA9685_SetServoAngle(14,  90);
+	 	// B' left arm
+	 	PCA9685_SetServoAngle(15,  50);
+	 	//A Shoulder IN Right
+	    //MotorShoulderIN_Right.timer->Instance->CCR1=45.2;
+	    //A'
+	    //MotorShoulderIN_Left.timer->Instance->CCR2=81.4;
+
+
+}
+
+

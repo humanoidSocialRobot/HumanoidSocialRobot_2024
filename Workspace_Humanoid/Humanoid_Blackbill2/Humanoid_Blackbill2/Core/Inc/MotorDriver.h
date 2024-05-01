@@ -9,8 +9,8 @@
 #define INC_MOTORDRIVER_H_
 #include "main.h"
 
-// Motor Connections to channels identifications
 
+// Motor Connections to channels identifications
 #define RingR_channel0 0
 #define PinkyR_channel1 1
 #define MiddleR_channel2 2
@@ -36,7 +36,7 @@
 typedef struct {
     TIM_HandleTypeDef *timer;  // Pointer to the timer handle
     uint32_t channel;           // Channel number
-}MotorConfig;
+}MotorConfig_t;
 
 typedef struct {
     GPIO_TypeDef *enablePort;  // Pointer to the GPIO port for motor enable control
@@ -49,14 +49,18 @@ typedef struct {
     uint32_t PWM_Left_Channel;           // Channel number
     uint32_t PWM_Right_Channel;           // Channel number
 
-}Dc_Motor;
+}Dc_Motor_t;
 /* USER CODE END PTD */
 
 
 
- void CloseHand(void);
- void OpenHand(void);
- void HelloWelcome(void);
+ void MotorDriver_CloseHand(void);
+ void MotorDriver_OpenHandandRelease(MotorConfig_t *Motor , uint16_t CCRX_Value );
+ void MotorDriver_ShakeHand(MotorConfig_t *Motor ,uint16_t CCRX_Value);
+ void MotorDriver_HoldObject_OneHand(MotorConfig_t *Motor,uint16_t CCRX_Value );
+ void MotorDriver_HoldObject_twoHand(MotorConfig_t *Motor_Right,MotorConfig_t *Motor_Left );
+ void MotorDriver_RelaseObject_OneHand(MotorConfig_t *Motor,uint16_t CCRX_Value );
+void  MotorDriver_HoldObject_OneHand_Left(MotorConfig_t *Motor , uint16_t CCRX_Value );
 
 
 
