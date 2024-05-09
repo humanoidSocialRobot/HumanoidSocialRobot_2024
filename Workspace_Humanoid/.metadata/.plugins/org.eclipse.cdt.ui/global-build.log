@@ -7498,3 +7498,492 @@ Finished building: Humanoid_Blackbill2.list
 Finished building: Humanoid_Blackbill2.bin
  
  
+15:10:51 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/MotorDriver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MotorDriver.d" -MT"Core/Src/MotorDriver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MotorDriver.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:772:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  772 |         if(huart->Instance = USART1){
+      |            ^~~~~
+../Core/Src/MotorDriver.c: In function 'MotorDriver_OpenHandandRelease':
+../Core/Src/MotorDriver.c:47:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   47 |         HAL_TIM_PWM_Start(&(Motor->timer), Motor->channel);
+      |                           ^~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c: In function 'MotorDriver_ShakeHand':
+../Core/Src/MotorDriver.c:113:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  113 |         HAL_TIM_PWM_Start(&(Motor->timer), Motor->channel);
+      |                           ^~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c: In function 'MotorDriver_HoldObject_OneHand':
+../Core/Src/MotorDriver.c:154:43: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  154 |                         HAL_TIM_PWM_Start(&(Motor->timer), Motor->channel);
+      |                                           ^~~~~~~~~~~~~~~
+      |                                           |
+      |                                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c: In function 'MotorDriver_HoldObject_OneHand_Left':
+../Core/Src/MotorDriver.c:212:51: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 HAL_TIM_PWM_Start(&(Motor->timer), Motor->channel);
+      |                                                   ^~~~~~~~~~~~~~~
+      |                                                   |
+      |                                                   TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c: In function 'MotorDriver_HoldObject_twoHand':
+../Core/Src/MotorDriver.c:283:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  283 |         HAL_TIM_PWM_Start(&(Motor_Right->timer), Motor_Right->channel);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c:296:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  296 |         HAL_TIM_PWM_Start(&(Motor_Left->timer), Motor_Left->channel);
+      |                           ^~~~~~~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+   text	   data	    bss	    dec	    hex	filename
+  26500	     28	   2308	  28836	   70a4	Humanoid_Blackbill2.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+Finished building: Humanoid_Blackbill2.list
+ 
+ 
+15:12:08 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/MotorDriver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MotorDriver.d" -MT"Core/Src/MotorDriver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MotorDriver.o"
+../Core/Src/MotorDriver.c: In function 'MotorDriver_OpenHandandRelease':
+../Core/Src/MotorDriver.c:47:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   47 |         HAL_TIM_PWM_Start(&(Motor->timer), Motor->channel);
+      |                           ^~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c: In function 'MotorDriver_ShakeHand':
+../Core/Src/MotorDriver.c:113:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  113 |         HAL_TIM_PWM_Start(&(Motor->timer), Motor->channel);
+      |                           ^~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c: In function 'MotorDriver_HoldObject_OneHand':
+../Core/Src/MotorDriver.c:154:43: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  154 |                         HAL_TIM_PWM_Start(&(Motor->timer), Motor->channel);
+      |                                           ^~~~~~~~~~~~~~~
+      |                                           |
+      |                                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c: In function 'MotorDriver_HoldObject_twoHand':
+../Core/Src/MotorDriver.c:283:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  283 |         HAL_TIM_PWM_Start(&(Motor_Right->timer), Motor_Right->channel);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c:296:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  296 |         HAL_TIM_PWM_Start(&(Motor_Left->timer), Motor_Left->channel);
+      |                           ^~~~~~~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+   text	   data	    bss	    dec	    hex	filename
+  26500	     28	   2308	  28836	   70a4	Humanoid_Blackbill2.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+Finished building: Humanoid_Blackbill2.list
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+ 
+15:13:39 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/MotorDriver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MotorDriver.d" -MT"Core/Src/MotorDriver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MotorDriver.o"
+../Core/Src/MotorDriver.c: In function 'MotorDriver_ShakeHand':
+../Core/Src/MotorDriver.c:113:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  113 |         HAL_TIM_PWM_Start(&(Motor->timer), Motor->channel);
+      |                           ^~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c: In function 'MotorDriver_HoldObject_OneHand':
+../Core/Src/MotorDriver.c:154:43: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  154 |                         HAL_TIM_PWM_Start(&(Motor->timer), Motor->channel);
+      |                                           ^~~~~~~~~~~~~~~
+      |                                           |
+      |                                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c: In function 'MotorDriver_HoldObject_twoHand':
+../Core/Src/MotorDriver.c:283:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  283 |         HAL_TIM_PWM_Start(&(Motor_Right->timer), Motor_Right->channel);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/MotorDriver.c:296:27: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+  296 |         HAL_TIM_PWM_Start(&(Motor_Left->timer), Motor_Left->channel);
+      |                           ^~~~~~~~~~~~~~~~~~~~
+      |                           |
+      |                           TIM_HandleTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/MotorDriver.h:10,
+                 from ../Core/Src/MotorDriver.c:10:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1940:56: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_HandleTypeDef **'
+ 1940 | HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                     ~~~~~~~~~~~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+   text	   data	    bss	    dec	    hex	filename
+  26500	     28	   2308	  28836	   70a4	Humanoid_Blackbill2.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.list
+Finished building: Humanoid_Blackbill2.bin
+ 
+ 
+08:29:09 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/MotorDriver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MotorDriver.d" -MT"Core/Src/MotorDriver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MotorDriver.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:773:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  773 |         if(huart->Instance = USART1){
+      |            ^~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+   text	   data	    bss	    dec	    hex	filename
+  26508	     28	   2308	  28844	   70ac	Humanoid_Blackbill2.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+Finished building: Humanoid_Blackbill2.list
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+ 
+08:35:00 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:202:33: error: expected ':' or '...' before 'MotorDriver_HoldObject_OneHand'
+  202 |                                 MotorDriver_HoldObject_OneHand(&motorShoulderInRight_gt, 65.9);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:204:33: error: expected ':' or '...' before 'MotorDriver_HoldObject_OneHand'
+  204 |                                 MotorDriver_HoldObject_OneHand(&motorShoulderInRight_gt, 65.9);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:206:33: error: expected ':' or '...' before 'MotorDriver_ShakeHand'
+  206 |                                 MotorDriver_ShakeHand(&motorShoulderInRight_gt, 65.9);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:783:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  783 |         if(huart->Instance = USART1){
+      |            ^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:202:33: warning: statement will never be executed [-Wswitch-unreachable]
+  202 |                                 MotorDriver_HoldObject_OneHand(&motorShoulderInRight_gt, 65.9);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+08:41:07 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:784:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  784 |         if(huart->Instance = USART1){
+      |            ^~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+   text	   data	    bss	    dec	    hex	filename
+  26292	     28	   2308	  28628	   6fd4	Humanoid_Blackbill2.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+08:43:52 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:202:34: error: 'Take_this' undeclared (first use in this function)
+  202 |                             case Take_this:
+      |                                  ^~~~~~~~~
+../Core/Src/main.c:202:34: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:204:34: error: 'Open_hand' undeclared (first use in this function)
+  204 |                             case Open_hand:
+      |                                  ^~~~~~~~~
+../Core/Src/main.c:206:35: error: 'Shake_hand' undeclared (first use in this function)
+  206 |                             case  Shake_hand:
+      |                                   ^~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:775:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  775 |         if(huart->Instance = USART1){
+      |            ^~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+08:44:09 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:202:34: error: 'Take_this' undeclared (first use in this function)
+  202 |                             case Take_this:
+      |                                  ^~~~~~~~~
+../Core/Src/main.c:202:34: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:204:34: error: 'Open_hand' undeclared (first use in this function)
+  204 |                             case Open_hand:
+      |                                  ^~~~~~~~~
+../Core/Src/main.c:206:35: error: 'Shake_hand' undeclared (first use in this function)
+  206 |                             case  Shake_hand:
+      |                                   ^~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:786:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  786 |         if(huart->Instance = USART1){
+      |            ^~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+08:44:49 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:775:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  775 |         if(huart->Instance = USART1){
+      |            ^~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+   text	   data	    bss	    dec	    hex	filename
+  26300	     28	   2308	  28636	   6fdc	Humanoid_Blackbill2.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+08:45:07 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:775:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  775 |         if(huart->Instance = USART1){
+      |            ^~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26300	     28	   2308	  28636	   6fdc	Humanoid_Blackbill2.elf
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+08:50:21 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:775:29: error: expected expression before '[' token
+  775 |         if(huart->Instance =[ USART1]){
+      |                             ^
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+08:50:27 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:775:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  775 |         if(huart->Instance = USART1){
+      |            ^~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+   text	   data	    bss	    dec	    hex	filename
+  26300	     28	   2308	  28636	   6fdc	Humanoid_Blackbill2.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+ 
+Finished building: Humanoid_Blackbill2.bin
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
+08:53:46 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:777:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  777 |         if(huart->Instance = USART1){
+      |            ^~~~~
+arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Humanoid_Blackbill2.elf
+ 
+arm-none-eabi-size  Humanoid_Blackbill2.elf 
+arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
+arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
+   text	   data	    bss	    dec	    hex	filename
+  26300	     28	   2308	  28636	   6fdc	Humanoid_Blackbill2.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
+Finished building: Humanoid_Blackbill2.hex
+Finished building: Humanoid_Blackbill2.bin
+ 
+ 
+Finished building: Humanoid_Blackbill2.list
+ 
