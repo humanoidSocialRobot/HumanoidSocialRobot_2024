@@ -1,6 +1,0 @@
-../Core/Src/MotorDriver.c:21:7:MotorDriver_OpenHandandRelease	5
-../Core/Src/MotorDriver.c:60:7:MotorDriver_CloseHand	1
-../Core/Src/MotorDriver.c:97:7:MotorDriver_ShakeHand	5
-../Core/Src/MotorDriver.c:140:7:MotorDriver_HoldObject_OneHand	5
-../Core/Src/MotorDriver.c:187:7:MotorDriver_HoldObject_OneHand_Left	5
-../Core/Src/MotorDriver.c:235:7:MotorDriver_HoldObject_twoHand	9

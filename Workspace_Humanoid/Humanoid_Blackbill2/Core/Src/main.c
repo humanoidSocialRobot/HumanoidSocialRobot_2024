@@ -38,7 +38,6 @@
 /*
  * ROS Macros, sent from WEBCAM and from Response to mic (speaker , chatter)
  */
-  //TODO macros is capital letter , and descriptive variable , documentation line ,comment, use tool ely 2alna 3leha for documentation
 #define ORDER_TO_TAKE_OBJECT 1   //(take this)Flag to be send from ROS , to move the right hand in position of taking object
 #define ORDER_TO_dELIVER_OBJECT 2  //(open hand)Flag to be send from ROS , to move right hand in position of delivering object
 #define ORDER_TO_SHAKE_HAND 3  //Flag to be send from ROS  , to move right hand in position of Shaking hand
@@ -140,9 +139,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 		motorLeftCounterGDU32 = __HAL_TIM_GET_COUNTER(&htim4);
 	}
 	else
-	{
-
-	}
+	{}
 }
 
 
@@ -201,33 +198,40 @@ int main(void)
     /* USER CODE BEGIN 3 */
   //TODO  CRC to check that data received right, parity check
   HAL_UART_Receive_IT(&huart1, rxDataGArrU8, 1);
-
 	  if(UART1_flag_gb == 1){
-		  	    UART1_flag_gb = 0;
-		  	    switch (rxDataGArrU8[0]){
+			UART1_flag_gb = 0;
+			switch (rxDataGArrU8[0]){
 		  	    case ORDER_TO_TAKE_OBJECT:
 		  	    {
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
-		  	    TAKE_OBJECT();
+		  	    //OR TAKE_OBJECT();
+		  	    MotorDriver_HoldObject_OneHand_Right(&motorShoulderInRight_gt, 90);
 				HAL_Delay(1000);
 				while(rxDataGArrU8[0] == 1){}
+				break;
 		  	    }
 		  	    case ORDER_TO_dELIVER_OBJECT:
 		  	    {
-		  	    RELEASE_OBJECT();
+		  	   //OR RELEASE_OBJECT();
+		  	    MotorDriver_RelaseObject_OneHand_Right(&motorShoulderInRight_gt, 60);
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
 				HAL_Delay(1000);
 				while(rxDataGArrU8[0] == 2){}
+				break;
 		  	    }
 		  	    case  ORDER_TO_SHAKE_HAND:
 		  	    {
-		  	    SHAKE_HAND();
+		  	    //OR SHAKE_HAND();
+		  	    MotorDriver_ShakeHand(&motorShoulderInRight_gt, 90);
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
 				HAL_Delay(1000);
 				while(rxDataGArrU8[0] == 3){}
+				break;
 		  	    }
 		  	    default:
-		  	    {}
+		  	    {
+		  	    	break;
+		  	    }
 		  	    }
 				   }
 	 }
@@ -810,131 +814,139 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
    */
 void TAKE_OBJECT(void)
 {
-TIM5->CCR1=90;
-HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
-HAL_Delay(3000);
-// C elbow right
-	  PCA9685_SetServoAngle(12,  10);
-	  // D rest right
-	  PCA9685_SetServoAngle(10,  100);
-	  HAL_Delay(4000);
-	  //open
-	  //Pinky Right hand (1)
-	   PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
-	  //Ring Right hand (2)
-	  PCA9685_SetServoAngle(RingR_channel0,  140);
-	  //middle Right hand (3)
-	  PCA9685_SetServoAngle(MiddleR_channel2,  140);
-	  //index Right hand (4)
-	  PCA9685_SetServoAngle(IndexR_channel3,  170);
-	  //thumb Right hand (5)
-	  PCA9685_SetServoAngle(ThumbR_channel4,  15);
-	  HAL_Delay(2000);
-   //close
-	 //pinky Right hand (1)
-	 PCA9685_SetServoAngle(1,  10);
-	 //Ring Right hand (2)
-	 PCA9685_SetServoAngle(0,  0);
-	 //middle Right hand (3)
-	 PCA9685_SetServoAngle(2,  0);
-	 //index Right hand (4)
-	 PCA9685_SetServoAngle(3,  75);
-	 //thumb Right hand (5)
-	 PCA9685_SetServoAngle(4,  75);
+    TIM5->CCR1 = 90;
+    HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+    HAL_Delay(3000);
+
+    // C elbow right
+    PCA9685_SetServoAngle(ELBOW_RIGHT_CHANNEL, 10);
+    // D rest right
+    PCA9685_SetServoAngle(REST_RIGHT_CHANNEL, 100);
+    HAL_Delay(4000);
+
+    // Open hand
+    // Pinky Right hand (1)
+    PCA9685_SetServoAngle(PINKY_FINGER_RIGHT_CHANNEL, 140);
+    // Ring Right hand (2)
+    PCA9685_SetServoAngle(RING_FINGER_RIGHT_CHANNEL, 140);
+    // Middle Right hand (3)
+    PCA9685_SetServoAngle(MIDDLE_FINGER_RIGHT_CHANNEL, 140);
+    // Index Right hand (4)
+    PCA9685_SetServoAngle(INDEX_FINGER_RIGHT_CHANNEL, 170);
+    // Thumb Right hand (5)
+    PCA9685_SetServoAngle(THUMB_FINGER_RIGHT_CHANNEL, 15);
+    HAL_Delay(2000);
+
+    // Close hand
+    // Pinky Right hand (1)
+    PCA9685_SetServoAngle(PINKY_FINGER_RIGHT_CHANNEL, 10);
+    // Ring Right hand (2)
+    PCA9685_SetServoAngle(RING_FINGER_RIGHT_CHANNEL, 0);
+    // Middle Right hand (3)
+    PCA9685_SetServoAngle(MIDDLE_FINGER_RIGHT_CHANNEL, 0);
+    // Index Right hand (4)
+    PCA9685_SetServoAngle(INDEX_FINGER_RIGHT_CHANNEL, 75);
+    // Thumb Right hand (5)
+    PCA9685_SetServoAngle(THUMB_FINGER_RIGHT_CHANNEL, 75);
 }
+
 /**
-   * @fn     RELEASE_OBJECT
-   * @brief  Rekease an object with one hand by positioning the fingers and arms.
-   * @param  void
-   * @note   This function performs the following actions:
-   *           - Sets servo angles for the fingers of the right hand to Open position.
-   *           - Sets servo angles for other parts of the arms to specific positions.
-   *           - Sets the PWM duty cycle for the specified Servo motor channel to a predefined value.
-   *           - Starts the PWM output for the specified Servo motor channel.
-   */
+ * @fn     RELEASE_OBJECT
+ * @brief  Release an object with one hand by positioning the fingers and arms.
+ * @param  void
+ * @note   This function performs the following actions:
+ *           - Sets servo angles for the fingers of the right hand to Open position.
+ *           - Sets servo angles for other parts of the arms to specific positions.
+ *           - Sets the PWM duty cycle for the specified Servo motor channel to a predefined value.
+ *           - Starts the PWM output for the specified Servo motor channel.
+ */
 void RELEASE_OBJECT(void)
 {
-//open
-	  //Pinky Right hand (1)
-	   PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
-	  //Ring Right hand (2)
-	  PCA9685_SetServoAngle(RingR_channel0,  140);
-	  //middle Right hand (3)
-	  PCA9685_SetServoAngle(MiddleR_channel2,  140);
-	  //index Right hand (4)
-	  PCA9685_SetServoAngle(IndexR_channel3,  170);
-	  //thumb Right hand (5)
-	  PCA9685_SetServoAngle(ThumbR_channel4,  15);
-	  HAL_Delay(4000);
-	  // C elbow right
-	 PCA9685_SetServoAngle(12,  80);
-	// D rest right
-	  PCA9685_SetServoAngle(10,  10);
-	  HAL_Delay(1500);
-	  //shoulder release
-	  TIM5->CCR1=60;
-	  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+    // Open hand
+    // Pinky Right hand (1)
+    PCA9685_SetServoAngle(PINKY_FINGER_RIGHT_CHANNEL, 140);
+    // Ring Right hand (2)
+    PCA9685_SetServoAngle(RING_FINGER_RIGHT_CHANNEL, 140);
+    // Middle Right hand (3)
+    PCA9685_SetServoAngle(MIDDLE_FINGER_RIGHT_CHANNEL, 140);
+    // Index Right hand (4)
+    PCA9685_SetServoAngle(INDEX_FINGER_RIGHT_CHANNEL, 170);
+    // Thumb Right hand (5)
+    PCA9685_SetServoAngle(THUMB_FINGER_RIGHT_CHANNEL, 15);
+    HAL_Delay(4000);
 
+    // C elbow right
+    PCA9685_SetServoAngle(ELBOW_RIGHT_CHANNEL, 80);
+    // D rest right
+    PCA9685_SetServoAngle(REST_RIGHT_CHANNEL, 10);
+    HAL_Delay(1500);
 
+    // Shoulder release
+    TIM5->CCR1 = 60;
+    HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
 }
+
 /**
-   * @fn     SHAKE_HAND
-   * @brief  Welcomes with a hand gesture by controlling servo motors.
-   * @param  void
-   * @note   This function performs the following actions:
-   *           - Sets servo angles for the fingers of the right hand to simulate an open hand gesture.
-   *           - Sets servo angles for other parts of the right arm to a specific position.
-   *           - Sets the PWM duty cycle for the Servo motor to a predefined value based on the specified motor channel.
-   *           - Starts the PWM output for the specified Servo motor channel.
-   */
-void SHAKE_HAND(void){
-	TIM5->CCR1=90;
-	HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
-	HAL_Delay(5000);
-		  //open
-		  //Pinky Right hand (1)
-		   PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
-		  //Ring Right hand (2)
-		  PCA9685_SetServoAngle(RingR_channel0,  140);
-		  //middle Right hand (3)
-		  PCA9685_SetServoAngle(MiddleR_channel2,  140);
-		  //index Right hand (4)
-		  PCA9685_SetServoAngle(IndexR_channel3,  170);
-		  //thumb Right hand (5)
-		  PCA9685_SetServoAngle(ThumbR_channel4,  15);
-		  HAL_Delay(1000);
-	   //close
-		 //pinky Right hand (1)
-		 PCA9685_SetServoAngle(1,  10);
-		 //Ring Right hand (2)
-		 PCA9685_SetServoAngle(0,  0);
-		 //middle Right hand (3)
-		 PCA9685_SetServoAngle(2,  0);
-		 //index Right hand (4)
-		 PCA9685_SetServoAngle(3,  75);
-		 //thumb Right hand (5)
-		 PCA9685_SetServoAngle(4,  75);
-		 HAL_Delay(3000);
-		 //open
-		 	  //Pinky Right hand (1)
-		 	   PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
-		 	  //Ring Right hand (2)
-		 	  PCA9685_SetServoAngle(RingR_channel0,  140);
-		 	  //middle Right hand (3)
-		 	  PCA9685_SetServoAngle(MiddleR_channel2,  140);
-		 	  //index Right hand (4)
-		 	  PCA9685_SetServoAngle(IndexR_channel3,  170);
-		 	  //thumb Right hand (5)
-		 	  PCA9685_SetServoAngle(ThumbR_channel4,  15);
-		 	  HAL_Delay(4000);
-		 	  //shoulder release
-		 	  TIM5->CCR1=60;
-		 	  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
-		 	  HAL_Delay(4000);
+ * @fn     SHAKE_HAND
+ * @brief  Welcomes with a hand gesture by controlling servo motors.
+ * @param  void
+ * @note   This function performs the following actions:
+ *           - Sets servo angles for the fingers of the right hand to simulate an open hand gesture.
+ *           - Sets servo angles for other parts of the right arm to a specific position.
+ *           - Sets the PWM duty cycle for the Servo motor to a predefined value based on the specified motor channel.
+ *           - Starts the PWM output for the specified Servo motor channel.
+ */
+void SHAKE_HAND(void)
+{
+    TIM5->CCR1 = 90;
+    HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+    HAL_Delay(5000);
 
+    // Open hand
+    // Pinky Right hand (1)
+    PCA9685_SetServoAngle(PINKY_FINGER_RIGHT_CHANNEL, 140);
+    // Ring Right hand (2)
+    PCA9685_SetServoAngle(RING_FINGER_RIGHT_CHANNEL, 140);
+    // Middle Right hand (3)
+    PCA9685_SetServoAngle(MIDDLE_FINGER_RIGHT_CHANNEL, 140);
+    // Index Right hand (4)
+    PCA9685_SetServoAngle(INDEX_FINGER_RIGHT_CHANNEL, 170);
+    // Thumb Right hand (5)
+    PCA9685_SetServoAngle(THUMB_FINGER_RIGHT_CHANNEL, 15);
+    HAL_Delay(1000);
 
+    // Close hand
+    // Pinky Right hand (1)
+    PCA9685_SetServoAngle(PINKY_FINGER_RIGHT_CHANNEL, 10);
+    // Ring Right hand (2)
+    PCA9685_SetServoAngle(RING_FINGER_RIGHT_CHANNEL, 0);
+    // Middle Right hand (3)
+    PCA9685_SetServoAngle(MIDDLE_FINGER_RIGHT_CHANNEL, 0);
+    // Index Right hand (4)
+    PCA9685_SetServoAngle(INDEX_FINGER_RIGHT_CHANNEL, 75);
+    // Thumb Right hand (5)
+    PCA9685_SetServoAngle(THUMB_FINGER_RIGHT_CHANNEL, 75);
+    HAL_Delay(3000);
 
+    // Open hand
+    // Pinky Right hand (1)
+    PCA9685_SetServoAngle(PINKY_FINGER_RIGHT_CHANNEL, 140);
+    // Ring Right hand (2)
+    PCA9685_SetServoAngle(RING_FINGER_RIGHT_CHANNEL, 140);
+    // Middle Right hand (3)
+    PCA9685_SetServoAngle(MIDDLE_FINGER_RIGHT_CHANNEL, 140);
+    // Index Right hand (4)
+    PCA9685_SetServoAngle(INDEX_FINGER_RIGHT_CHANNEL, 170);
+    // Thumb Right hand (5)
+    PCA9685_SetServoAngle(THUMB_FINGER_RIGHT_CHANNEL, 15);
+    HAL_Delay(4000);
+
+    // Shoulder release
+    TIM5->CCR1 = 60;
+    HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+    HAL_Delay(4000);
 }
+
 /**
   * @brief  This function is executed in case of error occurrence.
   * @retval None

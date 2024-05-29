@@ -10,25 +10,38 @@
 #include "main.h"
 
 
-// Motor Connections to channels identifications
-#define RingR_channel0 0
-#define PinkyR_channel1 1
-#define MiddleR_channel2 2
-#define IndexR_channel3 3
-#define ThumbR_channel4 4
+/**
+ * @file MotorDriver.h
+ * Motor Connections to channels identifications
+ * @brief Channel definitions for right and left hand fingers, rests, elbows, and shoulders.
+ */
 
-#define PinkyL_channel5 5
-#define MiddleL_channel6 6
-#define RingL_channel7 7
-#define IndexL_channel8 8
-#define ThumbL_channel9 9
+// Right Hand Fingers
+#define RING_FINGER_RIGHT_CHANNEL 0    ///< Channel for Right Ring Finger
+#define PINKY_FINGER_RIGHT_CHANNEL 1   ///< Channel for Right Pinky Finger
+#define MIDDLE_FINGER_RIGHT_CHANNEL 2  ///< Channel for Right Middle Finger
+#define INDEX_FINGER_RIGHT_CHANNEL 3   ///< Channel for Right Index Finger
+#define THUMB_FINGER_RIGHT_CHANNEL 4   ///< Channel for Right Thumb Finger
 
-#define RestR_channel10 10   //LABEL D
-#define RestL_channel11 11   //LABEL D'
-#define ElbowR_channel12 12  //LABEL C
-#define ElbowL_channel13 13  //LABEL C'
-#define ShoulderOutR_channel14 14  //LABEL B
-#define ShoulderOutL_channel15 15  //LABEL B'
+// Left Hand Fingers
+#define PINKY_FINGER_LEFT_CHANNEL 5    ///< Channel for Left Pinky Finger
+#define MIDDLE_FINGER_LEFT_CHANNEL 6   ///< Channel for Left Middle Finger
+#define RING_FINGER_LEFT_CHANNEL 7     ///< Channel for Left Ring Finger
+#define INDEX_FINGER_LEFT_CHANNEL 8    ///< Channel for Left Index Finger
+#define THUMB_FINGER_LEFT_CHANNEL 9    ///< Channel for Left Thumb Finger
+
+// Rest Channels
+#define REST_RIGHT_CHANNEL 10   ///< Channel for Right Hand Rest  (Label D)
+#define REST_LEFT_CHANNEL 11    ///< Channel for Left Hand Rest  (Label D')
+
+// Elbows
+#define ELBOW_RIGHT_CHANNEL 12  ///< Channel for Right Elbow (Label C)
+#define ELBOW_LEFT_CHANNEL 13   ///< Channel for Left Elbow (Label C')
+
+// Shoulders
+#define SHOULDER_OUT_RIGHT_CHANNEL 14  ///< Channel for Right Shoulder Out (Label B)
+#define SHOULDER_OUT_LEFT_CHANNEL 15   ///< Channel for Left Shoulder Out (Label B')
+
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
@@ -57,10 +70,10 @@ typedef struct {
  void MotorDriver_CloseHand(void);
  void MotorDriver_OpenHandandRelease(MotorConfig_t *Motor , uint16_t CCRX_Value );
  void MotorDriver_ShakeHand(MotorConfig_t *Motor ,uint16_t CCRX_Value);
- void MotorDriver_HoldObject_OneHand(MotorConfig_t *Motor,uint16_t CCRX_Value );
+ void MotorDriver_HoldObject_OneHand_Right(MotorConfig_t *Motor,uint16_t CCRX_Value );
+ void MotorDriver_HoldObject_OneHand_Left(MotorConfig_t *Motor , uint16_t CCRX_Value );
+ void MotorDriver_RelaseObject_OneHand_Right(MotorConfig_t *Motor,uint16_t CCRX_Value );
  void MotorDriver_HoldObject_twoHand(MotorConfig_t *Motor_Right,MotorConfig_t *Motor_Left );
- void MotorDriver_RelaseObject_OneHand(MotorConfig_t *Motor,uint16_t CCRX_Value );
-void MotorDriver_HoldObject_OneHand_Left(MotorConfig_t *Motor , uint16_t CCRX_Value );
 
 
 
