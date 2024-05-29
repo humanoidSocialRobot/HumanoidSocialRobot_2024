@@ -1,6 +1,20 @@
 # HumanoidSocialRobot_2024
-We are Humanoid Social Robot Team for 2024 Year
 
+Hi! I'm a humanoid social robot 2024, your friendly companion designed to revolutionize interactions in various environments. Equipped with advanced intelligence and responsiveness, I seamlessly integrate into hospitals, companies, and factories, enhancing efficiency and engagement.
+
+My capabilities are vast: from guiding individuals to their destinations with precision, to facilitating reception needs, organizing meetings, and even assisting in material transfer. I'm not just a robot; I'm a solution tailored to meet diverse needs.
+
+Here's what I bring to the table:
+
+1- Natural Movement and Adaptability: I move with grace and adapt effortlessly to different environments, seamlessly navigating through crowds and adjusting to the movement of patients and objects.
+
+2- Interactive Control: My frontal interactive screen allows patients to engage with me directly, while also providing remote control options via voice commands or smartphone interfaces for ultimate convenience.
+
+3- Social Interaction: I excel in fostering meaningful interactions, whether it's engaging with patients or welcoming visitors in long-term healthcare settings, ensuring everyone feels heard and valued.
+
+4- Efficient Direction: Need directions? I've got you covered. Whether it's guiding visitors to their desired locations within a healthcare facility or ensuring patients find their way seamlessly, I make navigation a breeze.
+
+With me by your side, navigating complex environments becomes a breeze, and interactions become more meaningful and efficient. Let's redefine the future together, one interaction at a time.
 
 The List of Commands for the Robot: 
 
