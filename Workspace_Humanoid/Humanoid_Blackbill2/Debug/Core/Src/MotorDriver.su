@@ -1,6 +1,6 @@
-../Core/Src/MotorDriver.c:21:7:MotorDriver_OpenHandandRelease	16	static
-../Core/Src/MotorDriver.c:60:7:MotorDriver_CloseHand	8	static
-../Core/Src/MotorDriver.c:97:7:MotorDriver_ShakeHand	16	static
-../Core/Src/MotorDriver.c:140:7:MotorDriver_HoldObject_OneHand	16	static
-../Core/Src/MotorDriver.c:187:7:MotorDriver_HoldObject_OneHand_Left	16	static
-../Core/Src/MotorDriver.c:235:7:MotorDriver_HoldObject_twoHand	16	static
+../Core/Src/MotorDriver.c:22:6:MotorDriver_ReleaseObject_OneHand_Right	16	static
+../Core/Src/MotorDriver.c:63:6:MotorDriver_CloseHand	8	static
+../Core/Src/MotorDriver.c:98:6:MotorDriver_ShakeHand	24	static
+../Core/Src/MotorDriver.c:178:6:MotorDriver_HoldObject_OneHand_Right	16	static
+../Core/Src/MotorDriver.c:240:6:MotorDriver_HoldObject_OneHand_Left	16	static
+../Core/Src/MotorDriver.c:301:6:MotorDriver_HoldObject_TwoHands	16	static
