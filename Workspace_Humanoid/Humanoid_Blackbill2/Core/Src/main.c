@@ -215,7 +215,11 @@ int main(void)
 		  	    case ORDER_TO_dELIVER_OBJECT:
 		  	    {
 		  	   //OR RELEASE_OBJECT();
+<<<<<<< HEAD
 		  	    MotorDriver_ReleaseObject_OneHand_Right(&motorShoulderInRight_gt, 60);
+=======
+		  	    MotorDriver_RelaseObject_OneHand_Right(&motorShoulderInRight_gt, 60);
+>>>>>>> 31b1562211f11990ad6a5c449c1d18fd7d17800d
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
 				HAL_Delay(1000);
 				while(rxDataGArrU8[0] == 2){}
@@ -233,7 +237,10 @@ int main(void)
 		  	    default:
 		  	    {
 		  	    	break;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 31b1562211f11990ad6a5c449c1d18fd7d17800d
 		  	    }
 		  	    }
 				   }

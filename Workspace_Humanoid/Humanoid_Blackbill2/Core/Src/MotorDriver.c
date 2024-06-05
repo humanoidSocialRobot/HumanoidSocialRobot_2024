@@ -30,7 +30,11 @@ void MotorDriver_ReleaseObject_OneHand_Right(MotorConfig_t *Motor, uint16_t CCRX
 		  //index Right hand (4)
 		  PCA9685_SetServoAngle(INDEX_FINGER_RIGHT_CHANNEL,  170);
 		  //thumb Right hand (5)
+<<<<<<< HEAD
 		  PCA9685_SetServoAngle(THUMB_FINGER_RIGHT_CHANNEL,  15);
+=======
+		  PCA9685_SetServoAngle(ThumbR_channel4,  15);
+>>>>>>> 31b1562211f11990ad6a5c449c1d18fd7d17800d
 		  HAL_Delay(4000);
 		  // C elbow right
 		 PCA9685_SetServoAngle(12,  80);
@@ -112,6 +116,7 @@ void MotorDriver_ShakeHand(MotorConfig_t *Motor, uint16_t CCRX_Value) {
     	HAL_Delay(5000);
 	  //open
 	  //Pinky Right hand (1)
+<<<<<<< HEAD
 	  PCA9685_SetServoAngle( PINKY_FINGER_RIGHT_CHANNEL  ,  140);
 	  //Ring Right hand (2)
 	  PCA9685_SetServoAngle(RING_FINGER_RIGHT_CHANNEL,  140);
@@ -121,6 +126,17 @@ void MotorDriver_ShakeHand(MotorConfig_t *Motor, uint16_t CCRX_Value) {
 	  PCA9685_SetServoAngle(INDEX_FINGER_RIGHT_CHANNEL,  170);
 	  //thumb Right hand (5)
 	  PCA9685_SetServoAngle(THUMB_FINGER_RIGHT_CHANNEL,  15);
+=======
+	  PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+	  //Ring Right hand (2)
+	  PCA9685_SetServoAngle(RingR_channel0,  140);
+	  //middle Right hand (3)
+	  PCA9685_SetServoAngle(MiddleR_channel2,  140);
+	  //index Right hand (4)
+	  PCA9685_SetServoAngle(IndexR_channel3,  170);
+	  //thumb Right hand (5)
+	  PCA9685_SetServoAngle(ThumbR_channel4,  15);
+>>>>>>> 31b1562211f11990ad6a5c449c1d18fd7d17800d
 	  HAL_Delay(1000);
 	 //close
 	 //pinky Right hand (1)
@@ -136,6 +152,7 @@ void MotorDriver_ShakeHand(MotorConfig_t *Motor, uint16_t CCRX_Value) {
 	 HAL_Delay(3000);
 	 //open
 	  //Pinky Right hand (1)
+<<<<<<< HEAD
 		  PCA9685_SetServoAngle( PINKY_FINGER_RIGHT_CHANNEL  ,  140);
 		  //Ring Right hand (2)
 		  PCA9685_SetServoAngle(RING_FINGER_RIGHT_CHANNEL,  140);
@@ -155,6 +172,27 @@ void MotorDriver_ShakeHand(MotorConfig_t *Motor, uint16_t CCRX_Value) {
 	        Motor->timer->Instance->CCR3 = CCRX_Value;
 	    } else if (Motor->channel == TIM_CHANNEL_4) {
 	        Motor->timer->Instance->CCR4 = CCRX_Value=30.00;
+=======
+	   PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+	  //Ring Right hand (2)
+	  PCA9685_SetServoAngle(RingR_channel0,  140);
+	  //middle Right hand (3)
+	  PCA9685_SetServoAngle(MiddleR_channel2,  140);
+	  //index Right hand (4)
+	  PCA9685_SetServoAngle(IndexR_channel3,  170);
+	  //thumb Right hand (5)
+	  PCA9685_SetServoAngle(ThumbR_channel4,  15);
+	  HAL_Delay(4000);
+	  //shoulder release
+	    if (Motor->channel == TIM_CHANNEL_1) {
+	        Motor->timer->Instance->CCR1 = CCRX_Value-30; //60 duty cycle
+	    } else if (Motor->channel == TIM_CHANNEL_2) {
+	        Motor->timer->Instance->CCR2 = CCRX_Value-30;
+	    } else if (Motor->channel == TIM_CHANNEL_3) {
+	        Motor->timer->Instance->CCR3 = CCRX_Value;
+	    } else if (Motor->channel == TIM_CHANNEL_4) {
+	        Motor->timer->Instance->CCR4 = CCRX_Value=30;
+>>>>>>> 31b1562211f11990ad6a5c449c1d18fd7d17800d
 	    } else {
 	        // Handle invalid channel if necessary
 	    }
@@ -193,6 +231,7 @@ void MotorDriver_HoldObject_OneHand_Right(MotorConfig_t *Motor, uint16_t CCRX_Va
 
     HAL_Delay(3000);
     // C elbow right
+<<<<<<< HEAD
 	  PCA9685_SetServoAngle(12,  10);
 	  // D rest right
 	  PCA9685_SetServoAngle(10,  100);
@@ -208,6 +247,23 @@ void MotorDriver_HoldObject_OneHand_Right(MotorConfig_t *Motor, uint16_t CCRX_Va
     		  PCA9685_SetServoAngle(INDEX_FINGER_RIGHT_CHANNEL,  170);
     		  //thumb Right hand (5)
     		  PCA9685_SetServoAngle(THUMB_FINGER_RIGHT_CHANNEL,  15);
+=======
+    	  PCA9685_SetServoAngle(12,  10);
+    	  // D rest right
+    	  PCA9685_SetServoAngle(10,  100);
+    	  HAL_Delay(4000);
+    	  //open
+    	  //Pinky Right hand (1)
+    	   PCA9685_SetServoAngle( PinkyR_channel1 ,  140);
+    	  //Ring Right hand (2)
+    	  PCA9685_SetServoAngle(RingR_channel0,  140);
+    	  //middle Right hand (3)
+    	  PCA9685_SetServoAngle(MiddleR_channel2,  140);
+    	  //index Right hand (4)
+    	  PCA9685_SetServoAngle(IndexR_channel3,  170);
+    	  //thumb Right hand (5)
+    	  PCA9685_SetServoAngle(ThumbR_channel4,  15);
+>>>>>>> 31b1562211f11990ad6a5c449c1d18fd7d17800d
     	  HAL_Delay(2000);
        //close
     	 //pinky Right hand (1)
