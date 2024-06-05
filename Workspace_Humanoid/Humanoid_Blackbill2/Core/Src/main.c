@@ -223,8 +223,9 @@ int main(void)
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
 				HAL_Delay(1000);
 				while(rxDataGArrU8[0] == 2){}
-
+                break;
 		  	    }
+
 		  	    case  ORDER_TO_SHAKE_HAND:
 		  	    {
 		  	    //OR SHAKE_HAND();
@@ -232,7 +233,7 @@ int main(void)
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
 				HAL_Delay(1000);
 				while(rxDataGArrU8[0] == 3){}
-
+                break;
 		  	    }
 		  	    default:
 		  	    {
