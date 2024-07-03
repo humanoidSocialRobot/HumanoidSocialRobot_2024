@@ -41,6 +41,12 @@
 #define ORDER_TO_TAKE_OBJECT 1   //(take this)Flag to be send from ROS , to move the right hand in position of taking object
 #define ORDER_TO_dELIVER_OBJECT 2  //(open hand)Flag to be send from ROS , to move right hand in position of delivering object
 #define ORDER_TO_SHAKE_HAND 3  //Flag to be send from ROS  , to move right hand in position of Shaking hand
+#define ORDER_TO_OPEN_RIGHTHAND 4
+#define ORDER_TO_CLOSE_RIGHTHAND 5
+#define ORDER_TO_OPEN_LEFTHAND 6
+#define ORDER_TO_CLOSE_LEFTHAND 7
+#define  ORDER_TO_OPEN_TWOHANDS 8
+#define ORDER_TO_CLOSE_TWOHANDS 9
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -196,6 +202,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+//	    MotorDriver_ReleaseObject_OneHand_Right(&motorShoulderInRight_gt, 60);
+
   //TODO  CRC to check that data received right, parity check
   HAL_UART_Receive_IT(&huart1, rxDataGArrU8, 1);
 	  if(UART1_flag_gb == 1){
@@ -206,17 +214,18 @@ int main(void)
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
 		  	    //OR TAKE_OBJECT();
 		  	    MotorDriver_HoldObject_OneHand_Right(&motorShoulderInRight_gt, 90);
+		  	    //MotorDriver_HoldObject_OneHand_Left(&motorShoulderInLeft_gt, 90);
 				HAL_Delay(1000);
-				while(rxDataGArrU8[0] == 1){}
+				//while(rxDataGArrU8[0] == 1){}
 				break;
 		  	    }
 		  	    case ORDER_TO_dELIVER_OBJECT:
 		  	    {
 		  	   //OR RELEASE_OBJECT();
-		  	    MotorDriver_RelaseObject_OneHand_Right(&motorShoulderInRight_gt, 60);
+		  	    MotorDriver_ReleaseObject_OneHand_Right(&motorShoulderInRight_gt, 60);
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
 				HAL_Delay(1000);
-				while(rxDataGArrU8[0] == 2){}
+				//while(rxDataGArrU8[0] == 2){}
 				break;
 		  	    }
 		  	    case  ORDER_TO_SHAKE_HAND:
@@ -225,15 +234,66 @@ int main(void)
 		  	    MotorDriver_ShakeHand(&motorShoulderInRight_gt, 90);
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
 				HAL_Delay(1000);
-				while(rxDataGArrU8[0] == 3){}
+				//while(rxDataGArrU8[0] == 3){}
 				break;
 		  	    }
+		  	    case ORDER_TO_OPEN_RIGHTHAND:
+		  	    {
+		  	    	MotorDriver_OpenHand_RightHand();
+		  	  	HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
+		  	  	HAL_Delay(1000);
+		  	  	//while(rxDataGArrU8[0] == 4){}
+		  	    break;
+		  	    }
+		  	    case ORDER_TO_CLOSE_RIGHTHAND:
+		  	    {
+		  	    MotorDriver_CloseHand_RightHand();
+				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
+				HAL_Delay(1000);
+				//while(rxDataGArrU8[0] == 5){}
+				break;
+						  	    }
+		  	    case ORDER_TO_OPEN_LEFTHAND:
+		  	    {
+		  	    MotorDriver_OpenHand_LefttHand();
+				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
+				HAL_Delay(1000);
+				//while(rxDataGArrU8[0] == 6){}
+				break;
+						  	    }
+		  	    case ORDER_TO_CLOSE_LEFTHAND:
+		  	    {
+		  	    MotorDriver_CloseHand_LeftHand();
+				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
+				HAL_Delay(1000);
+				//while(rxDataGArrU8[0] == 7){}
+				break;
+						  	    }
+		  	    case ORDER_TO_OPEN_TWOHANDS:
+		  	    {
+				 MotorDriver_OpenHand_TwoHand();
+				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
+				HAL_Delay(1000);
+				//while(rxDataGArrU8[0] == 8){}
+				break;
+							  	    }
+		  	    case ORDER_TO_CLOSE_TWOHANDS:
+				{
+					 MotorDriver_OpenHand_TwoHand();
+					HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
+					HAL_Delay(1000);
+					//while(rxDataGArrU8[0] == 9){}
+					break;
+				 }
+
 		  	    default:
 		  	    {
 		  	    	break;
+
 		  	    }
 		  	    }
-				   }
+				}
+
 	 }
   /* USER CODE END 3 */
 }
@@ -796,7 +856,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
            the HAL_UART_RxCpltCallback could be implemented in the user file
   */
 	if(huart->Instance == USART1){
-		rxBufferGArrU8[0] = huart->Instance->DR;
 		UART1_flag_gb = 1;
 	}
 }

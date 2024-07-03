@@ -67,13 +67,19 @@ typedef struct {
 
 
 
- void MotorDriver_CloseHand(void);
- void MotorDriver_OpenHandandRelease(MotorConfig_t *Motor , uint16_t CCRX_Value );
+
  void MotorDriver_ShakeHand(MotorConfig_t *Motor ,uint16_t CCRX_Value);
  void MotorDriver_HoldObject_OneHand_Right(MotorConfig_t *Motor,uint16_t CCRX_Value );
  void MotorDriver_HoldObject_OneHand_Left(MotorConfig_t *Motor , uint16_t CCRX_Value );
- void MotorDriver_RelaseObject_OneHand_Right(MotorConfig_t *Motor,uint16_t CCRX_Value );
+ void MotorDriver_ReleaseObject_OneHand_Right(MotorConfig_t *Motor,uint16_t CCRX_Value );
  void MotorDriver_HoldObject_twoHand(MotorConfig_t *Motor_Right,MotorConfig_t *Motor_Left );
+ void MotorDriver_OpenHand_RightHand();
+ void MotorDriver_OpenHand_LefttHand();
+ void MotorDriver_CloseHand_RightHand();
+ void MotorDriver_CloseHand_LeftHand();
+ void MotorDriver_OpenHand_TwoHand();
+ void MotorDriver_CloseHand_TwoHand();
+
 
 
 
