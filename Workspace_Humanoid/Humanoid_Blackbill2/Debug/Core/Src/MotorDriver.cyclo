@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ../Core/Src/MotorDriver.c:22:6:MotorDriver_ReleaseObject_OneHand_Right	1
 ../Core/Src/MotorDriver.c:63:6:MotorDriver_CloseHand	1
 ../Core/Src/MotorDriver.c:98:6:MotorDriver_ShakeHand	9
@@ -11,14 +10,3 @@
 ../Core/Src/MotorDriver.c:409:6:MotorDriver_CloseHand_LeftHand	1
 ../Core/Src/MotorDriver.c:423:6:MotorDriver_OpenHand_TwoHand	1
 ../Core/Src/MotorDriver.c:450:6:MotorDriver_CloseHand_TwoHand	1
-=======
-<<<<<<< HEAD
-../Core/Src/MotorDriver.c:22:6:MotorDriver_ReleaseObject_OneHand_Right	5
-../Core/Src/MotorDriver.c:63:6:MotorDriver_CloseHand	1
-../Core/Src/MotorDriver.c:98:6:MotorDriver_ShakeHand	9
-../Core/Src/MotorDriver.c:178:6:MotorDriver_HoldObject_OneHand_Right	5
-../Core/Src/MotorDriver.c:240:6:MotorDriver_HoldObject_OneHand_Left	5
-../Core/Src/MotorDriver.c:301:6:MotorDriver_HoldObject_TwoHands	9
-=======
->>>>>>> 31b1562211f11990ad6a5c449c1d18fd7d17800d
->>>>>>> 3981abae83c7ab2ccf4265e126a3ec4fe737dd7a
