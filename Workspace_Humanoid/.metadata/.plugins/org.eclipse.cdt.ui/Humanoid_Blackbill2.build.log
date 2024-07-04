@@ -1,27 +1,10 @@
-08:53:46 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
+14:38:58 **** Incremental Build of configuration Debug for project Humanoid_Blackbill2 ****
 make -j3 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
-../Core/Src/main.c:777:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-  777 |         if(huart->Instance = USART1){
-      |            ^~~~~
-arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Humanoid_Blackbill2.elf
- 
 arm-none-eabi-size  Humanoid_Blackbill2.elf 
-arm-none-eabi-objdump -h -S Humanoid_Blackbill2.elf  > "Humanoid_Blackbill2.list"
-arm-none-eabi-objcopy  -O ihex Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.hex"
    text	   data	    bss	    dec	    hex	filename
-  26300	     28	   2308	  28636	   6fdc	Humanoid_Blackbill2.elf
+  27404	     56	   2312	  29772	   744c	Humanoid_Blackbill2.elf
 Finished building: default.size.stdout
  
-arm-none-eabi-objcopy  -O binary Humanoid_Blackbill2.elf  "Humanoid_Blackbill2.bin"
-Finished building: Humanoid_Blackbill2.hex
-Finished building: Humanoid_Blackbill2.bin
- 
- 
-Finished building: Humanoid_Blackbill2.list
- 
 
-08:53:50 Build Finished. 0 errors, 1 warnings. (took 3s.675ms)
+14:38:59 Build Finished. 0 errors, 0 warnings. (took 386ms)
 

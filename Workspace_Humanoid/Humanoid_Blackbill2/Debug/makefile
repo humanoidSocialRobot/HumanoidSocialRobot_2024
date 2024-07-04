@@ -66,8 +66,13 @@ all: main-build
 main-build: Humanoid_Blackbill2.elf secondary-outputs
 
 # Tool invocations
+<<<<<<< HEAD
+Humanoid_Blackbill2.elf Humanoid_Blackbill2.map: $(OBJS) $(USER_OBJS) E:\Senior2\ Mechatronics\Graduation\ Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\Senior2 Mechatronics\Graduation Project\Embedded\Workspace_Humanoid\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+=======
 Humanoid_Blackbill2.elf Humanoid_Blackbill2.map: $(OBJS) $(USER_OBJS) D:\Senior2\Stm\ Projects\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-gcc -o "Humanoid_Blackbill2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Senior2\Stm Projects\Humanoid_Blackbill2\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Humanoid_Blackbill2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+>>>>>>> 31b1562211f11990ad6a5c449c1d18fd7d17800d
 	@echo 'Finished building target: $@'
 	@echo ' '
 

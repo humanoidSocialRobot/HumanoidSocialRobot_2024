@@ -202,7 +202,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+<<<<<<< HEAD
 //	    MotorDriver_ReleaseObject_OneHand_Right(&motorShoulderInRight_gt, 60);
+=======
+
+>>>>>>> 3981abae83c7ab2ccf4265e126a3ec4fe737dd7a
 
   //TODO  CRC to check that data received right, parity check
   HAL_UART_Receive_IT(&huart1, rxDataGArrU8, 1);
@@ -222,20 +226,38 @@ int main(void)
 		  	    case ORDER_TO_dELIVER_OBJECT:
 		  	    {
 		  	   //OR RELEASE_OBJECT();
+<<<<<<< HEAD
 		  	    MotorDriver_ReleaseObject_OneHand_Right(&motorShoulderInRight_gt, 60);
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
 				HAL_Delay(1000);
 				//while(rxDataGArrU8[0] == 2){}
 				break;
+=======
+<<<<<<< HEAD
+		  	    MotorDriver_ReleaseObject_OneHand_Right(&motorShoulderInRight_gt, 60);
+=======
+		  	    MotorDriver_RelaseObject_OneHand_Right(&motorShoulderInRight_gt, 60);
+>>>>>>> 31b1562211f11990ad6a5c449c1d18fd7d17800d
+				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
+				HAL_Delay(1000);
+				while(rxDataGArrU8[0] == 2){}
+                break;
+>>>>>>> 3981abae83c7ab2ccf4265e126a3ec4fe737dd7a
 		  	    }
+
 		  	    case  ORDER_TO_SHAKE_HAND:
 		  	    {
 		  	    //OR SHAKE_HAND();
 		  	    MotorDriver_ShakeHand(&motorShoulderInRight_gt, 90);
 				HAL_UART_Transmit(&huart1, txBufferGArrU8, 27, 10); //send received to ROS
 				HAL_Delay(1000);
+<<<<<<< HEAD
 				//while(rxDataGArrU8[0] == 3){}
 				break;
+=======
+				while(rxDataGArrU8[0] == 3){}
+                break;
+>>>>>>> 3981abae83c7ab2ccf4265e126a3ec4fe737dd7a
 		  	    }
 		  	    case ORDER_TO_OPEN_RIGHTHAND:
 		  	    {
@@ -288,8 +310,16 @@ int main(void)
 
 		  	    default:
 		  	    {
+<<<<<<< HEAD
 		  	    	break;
 
+=======
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> 31b1562211f11990ad6a5c449c1d18fd7d17800d
+>>>>>>> 3981abae83c7ab2ccf4265e126a3ec4fe737dd7a
 		  	    }
 		  	    }
 				}
